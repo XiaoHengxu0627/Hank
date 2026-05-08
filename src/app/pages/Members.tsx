@@ -160,7 +160,7 @@ export function Members() {
       viewport={{ once: true, margin: "-100px" }}
       className="group flex flex-col cursor-pointer"
     >
-      <div className={`relative overflow-hidden mb-6 ${large ? "aspect-[2/3]" : "aspect-[2/3]"}`}>
+      <div className={`relative overflow-hidden mb-4 sm:mb-6 ${large ? "aspect-[3/4] sm:aspect-[2/3]" : "aspect-[3/4] sm:aspect-[2/3]"}`}>
         <img
           src={member.image}
           alt={member.name}
@@ -168,22 +168,23 @@ export function Members() {
         />
         
         {/* Social Links on Hover */}
-        <div className="absolute top-4 right-4 flex flex-col gap-2 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-          <button className="w-10 h-10 bg-white/90 backdrop-blur-sm flex items-center justify-center text-black hover:bg-black hover:text-white transition-colors">
-            <Mail size={16} />
+        <div className="absolute top-2 sm:top-4 right-2 sm:right-4 flex flex-col gap-1.5 sm:gap-2 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+          <button className="w-7 sm:w-10 h-7 sm:h-10 bg-white/90 backdrop-blur-sm flex items-center justify-center text-black hover:bg-black hover:text-white transition-colors">
+            <Mail size={12} />
           </button>
-          <button className="w-10 h-10 bg-white/90 backdrop-blur-sm flex items-center justify-center text-black hover:bg-black hover:text-white transition-colors">
-            <ExternalLink size={16} />
+          <button className="w-7 sm:w-10 h-7 sm:h-10 bg-white/90 backdrop-blur-sm flex items-center justify-center text-black hover:bg-black hover:text-white transition-colors">
+            <ExternalLink size={12} />
           </button>
         </div>
       </div>
       
-      <div className="flex flex-col gap-1">
-        <h3 className="font-bold text-2xl tracking-wide flex items-baseline gap-3">
-          {member.name} <span className="text-sm text-zinc-400 font-normal">{member.enName}</span>
+      <div className="flex flex-col gap-1.5 px-1">
+        <h3 className="font-bold text-base sm:text-lg md:text-xl lg:text-2xl tracking-wide">
+          {member.name}
         </h3>
-        <p className="text-sm font-medium text-black uppercase tracking-widest mt-2">{member.role}</p>
-        <p className="text-sm text-zinc-500 mt-1 leading-relaxed">{member.bio || member.research}</p>
+        <p className="text-xs sm:text-sm text-zinc-400 font-normal">{member.enName}</p>
+        <p className="text-xs sm:text-sm font-medium text-black uppercase tracking-widest mt-0.5 sm:mt-1">{member.role}</p>
+        <p className="text-xs sm:text-sm text-zinc-500 mt-0.5 sm:mt-1 leading-relaxed hidden sm:block">{member.bio || member.research}</p>
       </div>
     </motion.div>
   );
@@ -206,11 +207,11 @@ export function Members() {
       </div>
 
       {/* Advisors Section */}
-      <section className="max-w-7xl mx-auto px-6 mb-32">
-        <div className="flex items-center gap-4 mb-12 border-b border-zinc-200 pb-4">
-          <h2 className="text-2xl font-bold tracking-widest uppercase">{t("members.advisors")}</h2>
+      <section className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 mb-20 sm:mb-32">
+        <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12 border-b border-zinc-200 pb-3 sm:pb-4">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-bold tracking-widest uppercase">{t("members.advisors")}</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+        <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 gap-x-3 sm:gap-x-6 md:gap-x-12 gap-y-8 sm:gap-y-16">
           {advisors.map((advisor) => (
             <MemberCard key={advisor.id} member={advisor} large={true} />
           ))}
@@ -218,11 +219,11 @@ export function Members() {
       </section>
 
       {/* PhD Section */}
-      <section className="max-w-7xl mx-auto px-6 mb-32">
-        <div className="flex items-center gap-4 mb-12 border-b border-zinc-200 pb-4">
-          <h2 className="text-2xl font-bold tracking-widest uppercase">{t("members.phdStudents")}</h2>
+      <section className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 mb-20 sm:mb-32">
+        <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12 border-b border-zinc-200 pb-3 sm:pb-4">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-bold tracking-widest uppercase">{t("members.phdStudents")}</h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-8 gap-y-16">
+        <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-3 sm:gap-x-4 md:gap-x-8 gap-y-8 sm:gap-y-16">
           {phdStudents.map((student) => (
             <MemberCard key={student.id} member={student} />
           ))}
@@ -230,11 +231,11 @@ export function Members() {
       </section>
 
       {/* Master Section */}
-      <section className="max-w-7xl mx-auto px-6 mb-32">
-        <div className="flex items-center gap-4 mb-12 border-b border-zinc-200 pb-4">
-          <h2 className="text-2xl font-bold tracking-widest uppercase">{t("members.masterStudents")}</h2>
+      <section className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 mb-20 sm:mb-32">
+        <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12 border-b border-zinc-200 pb-3 sm:pb-4">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-bold tracking-widest uppercase">{t("members.masterStudents")}</h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-8 gap-y-16">
+        <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-3 sm:gap-x-4 md:gap-x-8 gap-y-8 sm:gap-y-16">
           {masterStudents.map((student) => (
             <MemberCard key={student.id} member={student} />
           ))}
