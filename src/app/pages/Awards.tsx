@@ -9,7 +9,7 @@ export function Awards() {
       workTitle: "Musipple",
       title: "红点设计概念奖（Red Dot Award: Design Concept）",
       authors: "何自强",
-      image: "public/heziqiang.reddot.jpg",
+      image: "/heziqiang.reddot.jpg",
       workLink: "#", // 作品名称链接占位符
       titleLink: "#", // 奖项名称链接占位符
       authorsLink: "#", // 作者名称链接占位符
@@ -20,7 +20,7 @@ export function Awards() {
       workTitle: "Holding hands while the walls come tumbling down",
       title: "2024年iF设计奖",
       authors: "户润恺",
-      image: "public/hurunkai.if.jpg",
+      image: "/hurunkai.if.jpg",
       workLink: "#", // 作品名称链接占位符
       titleLink: "#", // 奖项名称链接占位符
       authorsLink: "#", // 作者名称链接占位符
@@ -31,7 +31,7 @@ export function Awards() {
       workTitle: "智能一体化草方格铺设车",
       title: "2024好设计金奖",
       authors: "颜羽鹏、何自强、明世杰",
-      image: "public/haosheji.jpg",
+      image: "/haosheji.jpg",
       workLink: "#", // 作品名称链接占位符
       titleLink: "#", // 奖项名称链接占位符
       authorsLink: "#", // 作者名称链接占位符
@@ -46,10 +46,10 @@ export function Awards() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group flex flex-col md:flex-row gap-8 md:gap-16 border-t border-zinc-200 py-16 cursor-pointer"
+      className="group flex flex-col md:flex-row gap-6 md:gap-12 border-t border-zinc-200 py-12 cursor-pointer"
     >
       {/* 主图部分 */}
-      <div className="w-full md:w-4/12 aspect-[4/3] relative overflow-hidden bg-zinc-100">
+      <div className="w-full md:w-4/12 aspect-[16/8.5] relative overflow-hidden bg-zinc-100">
         <a href={award.imageLink} className="block w-full h-full">
           <img
             src={award.image}
@@ -60,31 +60,31 @@ export function Awards() {
       </div>
 
       {/* 文字内容部分 */}
-      <div className="w-full md:w-8/12 flex flex-col justify-center">
+      <div className="w-full md:w-8/12 flex flex-col justify-center px-6">
         {/* 作品名称 - 最大字号 */}
-        <h2 className="text-3xl md:text-4xl font-bold mb-2 group-hover:text-zinc-600 transition-colors tracking-tight">
+        <h2 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-zinc-600 transition-colors tracking-tight">
           <a href={award.workLink} className="text-zinc-900 hover:text-zinc-600 transition-colors">
             {award.workTitle}
           </a>
         </h2>
 
         {/* 奖项名称 - 次一级字号 */}
-        <h3 className="text-xl md:text-2xl font-semibold mb-4 text-zinc-700">
+        <h3 className="text-base md:text-lg font-semibold mb-3 text-zinc-700">
           <a href={award.titleLink} className="text-zinc-700 hover:text-zinc-900 transition-colors">
             {award.title}
           </a>
         </h3>
 
         {/* 作者名称 */}
-        <p className="text-lg text-zinc-500 mb-8 font-light">
+        <p className="text-sm text-zinc-500 mb-5 font-light">
           <a href={award.authorsLink} className="text-zinc-500 hover:text-zinc-900 transition-colors">
             {award.authors}
           </a>
         </p>
 
         {/* 链接指示器 */}
-        <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-widest opacity-0 -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-          查看详情 View Details <ArrowUpRight size={16} />
+        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest opacity-0 -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+          查看详情 View Details <ArrowUpRight size={13} />
         </div>
       </div>
     </motion.div>
