@@ -21,14 +21,14 @@ export function Layout() {
 
   const navLinks = [
     { name: t("nav.home"), path: "/" },
-    { name: "项目研究", path: "/projects" },
+    { name: t("nav.projects"), path: "/projects" },
     { 
-      name: "学术成果", 
+      name: t("nav.papers"), 
       path: "/papers",
       children: [
-        { name: "论文", path: "/papers" },
-        { name: "奖项", path: "/awards" },
-        { name: "论坛", path: "/forums" },
+        { name: t("nav.sub.paper"), path: "/papers" },
+        { name: t("nav.sub.award"), path: "/awards" },
+        { name: t("nav.sub.forum"), path: "/forums" },
       ]
     },
     { name: t("nav.team"), path: "/team" },

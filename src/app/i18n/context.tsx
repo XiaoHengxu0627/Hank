@@ -43,6 +43,13 @@ const translations: Record<Language, any> = {
       home: "首页",
       research: "研究",
       team: "团队",
+      projects: "项目研究",
+      papers: "学术成果",
+      sub: {
+        paper: "论文",
+        award: "奖项",
+        forum: "论坛",
+      },
     },
     home: {
       labName: "CUI Design Lab",
@@ -100,6 +107,13 @@ const translations: Record<Language, any> = {
       home: "HOME",
       research: "RESEARCH",
       team: "TEAM",
+      projects: "PROJECTS",
+      papers: "PUBLICATIONS",
+      sub: {
+        paper: "Papers",
+        award: "Awards",
+        forum: "Forums",
+      },
     },
     home: {
       labName: "CUI Design Lab",

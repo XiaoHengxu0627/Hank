@@ -38,7 +38,7 @@ export function Members() {
       name: "明世杰",
       enName: "Shijie Ming",
       role: "2023级 博士生",
-      research: "虚拟现实｜人机交互",
+      research: "虚拟体验｜人机交互",
       image: "/mingshijie.jpg",
     },
     {
@@ -155,16 +155,18 @@ export function Members() {
 
   const MemberCard = ({ member, large = false }: { member: any; large?: boolean }) => (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: "-150px" }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
       className="group flex flex-col cursor-pointer"
     >
       <div className={`relative overflow-hidden mb-4 sm:mb-6 ${large ? "aspect-[3/4] sm:aspect-[2/3]" : "aspect-[3/4] sm:aspect-[2/3]"}`}>
         <img
           src={member.image}
           alt={member.name}
-          className="w-full h-full object-cover transition-all duration-700"
+          loading="lazy"
+          className="w-full h-full object-cover transition-all duration-500"
         />
         
         {/* Social Links on Hover */}
@@ -192,14 +194,14 @@ export function Members() {
   return (
     <div className="w-full bg-white pt-24 pb-32">
       {/* Header */}
-      <div className="max-w-7xl mx-auto px-6 mb-24">
+      <div className="max-w-7xl mx-auto px-6 mb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="max-w-3xl"
         >
-          <h1 className="text-4xl md:text-5xl font-black mb-6 tracking-tighter">{t("members.title")} <span className="text-zinc-300">{t("members.titleEn")}</span></h1>
-          <p className="text-lg text-zinc-500 leading-relaxed font-light">
+          <h1 className="text-3xl md:text-4xl font-black mb-4 tracking-tighter">{t("members.title")} <span className="text-zinc-300">{t("members.titleEn")}</span></h1>
+          <p className="text-base md:text-lg text-zinc-500 leading-relaxed font-light">
             {t("members.subtitle")}<br />
             {t("members.subtitle2")}
           </p>

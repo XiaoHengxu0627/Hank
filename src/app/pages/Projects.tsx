@@ -120,19 +120,22 @@ export function Projects() {
     },
   ];
 
-  const ProjectCard = ({ project, index }: { project: any; index: number }) => (
+  const ProjectCard = ({ project, index }: { project: any; index: number }) => {
+    const adjustedDelay = Math.min(index * 0.06, 0.4);
+    return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      viewport={{ once: true, margin: "-150px" }}
+      transition={{ duration: 0.5, delay: adjustedDelay, ease: "easeOut" }}
       className="group flex flex-col md:flex-row gap-6 md:gap-12 border-t border-zinc-200 py-12 cursor-pointer"
     >
       <div className="w-full md:w-5/12 aspect-[16/8.5] relative overflow-hidden bg-zinc-100">
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+          loading="lazy"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
@@ -165,18 +168,19 @@ export function Projects() {
         )}
       </div>
     </motion.div>
-  );
+    );
+  };
 
   return (
     <div className="w-full bg-white pt-24 pb-32">
-      <div className="max-w-7xl mx-auto px-6 mb-24">
+      <div className="max-w-7xl mx-auto px-6 mb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="max-w-3xl"
         >
-          <h1 className="text-4xl md:text-5xl font-black mb-6 tracking-tighter">项目研究 <span className="text-zinc-300">PROJECTS</span></h1>
-          <p className="text-lg text-zinc-500 leading-relaxed font-light">
+          <h1 className="text-3xl md:text-4xl font-black mb-4 tracking-tighter">项目研究 <span className="text-zinc-300">PROJECTS</span></h1>
+          <p className="text-base md:text-lg text-zinc-500 leading-relaxed font-light">
             通过深度交叉学科研究，探索设计与科技融合的无限可能。<br />
             以下为实验室近期的核心研究项目。
           </p>

@@ -14,11 +14,11 @@ export function Home() {
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 0.4, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1764530926841-4ffd875b97c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhYnN0cmFjdCUyMGFyY2hpdGVjdHVyZSUyMGxpZ2h0fGVufDF8fHx8MTc3NTk5OTcwMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral')] bg-cover bg-center"
+          className="absolute inset-0 z-0 bg-[url('/background.jpg.png')] bg-cover bg-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-zinc-950/50 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-zinc-950/15 to-transparent z-10" />
 
-        <div className="relative z-20 max-w-5xl mx-auto w-full pt-20">
+        <div className="relative z-20 max-w-5xl mx-auto w-full pt-[40px]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -28,11 +28,11 @@ export function Home() {
             <h2 className="text-sm tracking-[0.3em] text-zinc-400 font-medium uppercase">
               {t("home.labName")}
             </h2>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[1.1] tracking-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight">
               {t("home.heroTitle1")}<br />
               <span className="text-zinc-500">{t("home.heroTitle2")}</span>
             </h1>
-            <p className="max-w-xl text-lg md:text-xl text-zinc-300 font-light mt-6 leading-relaxed">
+            <p className="max-w-xl text-xs md:text-sm lg:text-base text-zinc-300 font-light mt-6 leading-relaxed">
               {t("home.heroDesc1")}<br />
               {t("home.heroDesc2")}<br />
               {t("home.heroDesc3")}
