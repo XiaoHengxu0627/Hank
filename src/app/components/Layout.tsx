@@ -1,6 +1,6 @@
-import { Outlet, Link, useLocation } from "react-router";
+import { Outlet, Link, useLocation, useNavigate } from "react-router";
 import { Menu, X, Globe, Mail, MapPin, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useLanguage } from "../i18n/context";
 import {
@@ -14,6 +14,10 @@ export function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const { language, setLanguage, t } = useLanguage();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
 
   const navLinks = [
     { name: t("nav.home"), path: "/" },
@@ -62,6 +66,13 @@ export function Layout() {
                         <motion.div
                           layoutId="nav-indicator"
                           className="absolute -bottom-2 left-0 right-0 h-0.5 bg-black"
+                          initial={false}
+                          transition={{ 
+                            type: "spring", 
+                            stiffness: 300, 
+                            damping: 30,
+                            duration: 0.3 
+                          }}
                         />
                       )}
                     </DropdownMenuTrigger>
@@ -91,6 +102,13 @@ export function Layout() {
                     <motion.div
                       layoutId="nav-indicator"
                       className="absolute -bottom-2 left-0 right-0 h-0.5 bg-black"
+                      initial={false}
+                      transition={{ 
+                        type: "spring", 
+                        stiffness: 300, 
+                        damping: 30,
+                        duration: 0.3 
+                      }}
                     />
                   )}
                 </Link>
