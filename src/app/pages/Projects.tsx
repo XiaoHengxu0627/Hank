@@ -51,7 +51,7 @@ export function Projects() {
       date: "2023",
       description: "作为第二届世界元宇宙大会虚拟制片及安亭汽车工业宣传片。",
       image: "/yuanqi-anting.jpg",
-      link: "https://mp.weixin.qq.com/s/YiktWC_G5RCXsGuWMwW0_g",
+      link: "https://mp.weixin.qq.com/s?__biz=MzU5NDk0NDcyOQ==&mid=2247488620&idx=1&sn=936e33ada1baeee17348132ed3c554dc&chksm=ff44467f6355796796533b75b4680bbbf0c15d2f0b41d16ed723fb5602fd25afc0d069d4e5c6&mpshare=1&scene=1&srcid=0509qNaEVE73QvzPB4VaHKHp&sharer_shareinfo=7860f6d87377c46971474cfadf9506e7&sharer_shareinfo_first=7860f6d87377c46971474cfadf9506e7#rd",
     },
     {
       id: "p7",
@@ -60,6 +60,7 @@ export function Projects() {
       date: "2023",
       description: "主持虚拟交互艺术设计教学成果展览策划与呈现。",
       image: "/yuan-exhibition.jpg",
+      link: "https://mp.weixin.qq.com/s?__biz=MzU5NDk0NDcyOQ==&mid=2247487120&idx=1&sn=eb0dfe06f280a7cae7f58cdaa82aeb6f&chksm=ff2688d90a0003c8983eea2de7b23d854072ad41233d5d89997ba6a74d57a6854f4c88351cc9&mpshare=1&scene=1&srcid=0509aI8TChxQgUYqMBSk8NWT&sharer_shareinfo=d5708a5ebf87d16cb87d7b5251f8f7b9&sharer_shareinfo_first=d5708a5ebf87d16cb87d7b5251f8f7b9#rd",
     },
     {
       id: "p8",

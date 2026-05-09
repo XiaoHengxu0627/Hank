@@ -197,8 +197,8 @@ export function Layout() {
             <ul className="space-y-4 text-sm text-zinc-600">
               <li className="flex items-center gap-3">
                 <Mail size={16} className="text-zinc-400" />
-                <a href="mailto:contact@jiangkelab.design" className="hover:text-black transition-colors">
-                  contact@jiangkelab.design
+                <a href="mailto:absolutecui@163.com" className="hover:text-black transition-colors">
+                  absolutecui@163.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -212,11 +212,7 @@ export function Layout() {
 
           <div>
             <h3 className="font-semibold text-sm tracking-wider mb-6">{t("footer.followUs")}</h3>
-            <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white border border-zinc-200 flex items-center justify-center text-zinc-600 hover:border-black hover:text-black transition-all">
-                <Globe size={18} />
-              </a>
-            </div>
+            <p className="text-sm text-zinc-600">公众号：CUI Design Studio</p>
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-zinc-200 text-xs text-zinc-400 flex flex-col md:flex-row justify-between items-center gap-4">
