@@ -346,13 +346,9 @@ export function Papers() {
 
   const filteredPapers = useMemo(() => {
     return papers.filter(paper => {
-      if (selectedYear) {
-        return paper.year === selectedYear;
-      }
-      if (selectedType) {
-        return paper.type === selectedType;
-      }
-      return true;
+      const yearMatch = !selectedYear || paper.year === selectedYear;
+      const typeMatch = !selectedType || paper.type === selectedType;
+      return yearMatch && typeMatch;
     }).sort((a, b) => parseInt(b.year) - parseInt(a.year));
   }, [papers, selectedYear, selectedType]);
 
