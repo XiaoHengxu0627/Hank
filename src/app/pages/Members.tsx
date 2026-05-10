@@ -258,9 +258,9 @@ export function Members() {
               如果你对科技与艺术的交汇点充满热情，欢迎发送简历与作品集至我们的邮箱。
             </p>
           </div>
-          <button className="bg-black text-white px-8 py-4 font-semibold uppercase tracking-wider text-sm hover:bg-zinc-800 transition-colors whitespace-nowrap">
+          <a href="mailto:absolutecui@163.com" className="bg-black text-white px-8 py-4 font-semibold uppercase tracking-wider text-sm hover:bg-zinc-800 transition-colors whitespace-nowrap inline-flex items-center justify-center">
             联系我们 Contact Us
-          </button>
+          </a>
         </div>
       </section>
     </div>
