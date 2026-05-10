@@ -101,6 +101,15 @@ const translations: Record<Language, any> = {
       copyright: "Jiang Ke Design & Innovation Lab. All rights reserved.",
       designed: "Designed with minimalism & logic.",
     },
+    papers: {
+      types: {
+        "Conference Paper": "会议论文",
+        "Journal Paper": "期刊论文",
+        "Book": "著作",
+        "Book Chapter": "书籍章节",
+        "Workshop": "工作坊",
+      },
+    },
   },
   en: {
     nav: {
@@ -164,6 +173,15 @@ const translations: Record<Language, any> = {
       address2: "School of Design & Innovation, Room 402",
       copyright: "CUI Design Lab. All rights reserved.",
       designed: "Designed with minimalism & logic.",
+    },
+    papers: {
+      types: {
+        "Conference Paper": "Conference Paper",
+        "Journal Paper": "Journal Paper",
+        "Book": "Book",
+        "Book Chapter": "Book Chapter",
+        "Workshop": "Workshop",
+      },
     },
   },
 };

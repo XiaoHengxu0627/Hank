@@ -1,8 +1,10 @@
 import { motion } from "motion/react";
 import { ArrowUpRight, ChevronDown, X } from "lucide-react";
 import { useState, useMemo } from "react";
+import { useLanguage } from "../i18n/context";
 
 export function Papers() {
+  const { t } = useLanguage();
   const [activeFilter, setActiveFilter] = useState<"year" | "type">("year");
   const [selectedYear, setSelectedYear] = useState<string | null>(null);
   const [selectedType, setSelectedType] = useState<string | null>(null);
@@ -344,138 +346,148 @@ export function Papers() {
 
   const filteredPapers = useMemo(() => {
     return papers.filter(paper => {
-      if (selectedYear && activeFilter === "year") {
+      if (selectedYear) {
         return paper.year === selectedYear;
       }
-      if (selectedType && activeFilter === "type") {
+      if (selectedType) {
         return paper.type === selectedType;
       }
       return true;
     }).sort((a, b) => parseInt(b.year) - parseInt(a.year));
-  }, [papers, selectedYear, selectedType, activeFilter]);
+  }, [papers, selectedYear, selectedType]);
+
+  const [yearDropdownOpen, setYearDropdownOpen] = useState(false);
+  const [typeDropdownOpen, setTypeDropdownOpen] = useState(false);
 
   const clearFilters = () => {
     setSelectedYear(null);
     setSelectedType(null);
   };
 
+  const handleYearSelect = (year: string | null) => {
+    setSelectedYear(year);
+    setYearDropdownOpen(false);
+  };
+
+  const handleTypeSelect = (type: string | null) => {
+    setSelectedType(type);
+    setTypeDropdownOpen(false);
+  };
+
   const FilterSelector = () => (
     <div className="mb-8">
-      {/* Filter Tabs */}
-      <div className="flex border-b border-zinc-200 mb-4">
-        <button
-          onClick={() => setActiveFilter("year")}
-          className={`px-6 py-2 text-sm font-medium uppercase tracking-wider transition-colors relative ${
-            activeFilter === "year" 
-              ? "text-black" 
-              : "text-zinc-500 hover:text-black"
-          }`}
-        >
-          年份 Year
-          {activeFilter === "year" && (
-            <motion.div
-              layoutId="filter-indicator"
-              className="absolute bottom-0 left-0 right-0 h-0.5 bg-black"
-              initial={false}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+        {/* Year Dropdown */}
+        <div className="relative">
+          <button
+            onClick={() => {
+              setYearDropdownOpen(!yearDropdownOpen);
+              setTypeDropdownOpen(false);
+            }}
+            className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium bg-zinc-100 hover:bg-zinc-200 rounded-lg transition-colors min-w-[120px] justify-between"
+          >
+            <span>{selectedYear || "年份 Year"}</span>
+            <ChevronDown 
+              size={14} 
+              className={`transition-transform ${yearDropdownOpen ? "rotate-180" : ""}`}
             />
+          </button>
+          {yearDropdownOpen && (
+            <>
+              <div 
+                className="fixed inset-0 z-40" 
+                onClick={() => setYearDropdownOpen(false)}
+              />
+              <motion.div
+                initial={{ opacity: 0, y: -8, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -8, scale: 0.95 }}
+                className="absolute top-full left-0 mt-1 bg-white border border-zinc-200 rounded-lg shadow-lg z-50 min-w-[120px] overflow-hidden"
+              >
+                <button
+                  onClick={() => handleYearSelect(null)}
+                  className={`w-full px-4 py-2 text-sm text-left hover:bg-zinc-50 transition-colors ${
+                    !selectedYear ? "bg-black text-white hover:bg-black" : "text-zinc-700"
+                  }`}
+                >
+                  全部 All
+                </button>
+                {years.map(year => (
+                  <button
+                    key={year}
+                    onClick={() => handleYearSelect(year)}
+                    className={`w-full px-4 py-2 text-sm text-left hover:bg-zinc-50 transition-colors ${
+                      selectedYear === year ? "bg-black text-white hover:bg-black" : "text-zinc-700"
+                    }`}
+                  >
+                    {year}
+                  </button>
+                ))}
+              </motion.div>
+            </>
           )}
-        </button>
-        <button
-          onClick={() => setActiveFilter("type")}
-          className={`px-6 py-2 text-sm font-medium uppercase tracking-wider transition-colors relative ${
-            activeFilter === "type" 
-              ? "text-black" 
-              : "text-zinc-500 hover:text-black"
-          }`}
-        >
-          类型 Type
-          {activeFilter === "type" && (
-            <motion.div
-              layoutId="filter-indicator"
-              className="absolute bottom-0 left-0 right-0 h-0.5 bg-black"
-              initial={false}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            />
-          )}
-        </button>
-      </div>
+        </div>
 
-      {/* Selected Filter Status */}
-      {(selectedYear || selectedType) && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          className="flex items-center gap-3 mb-4 p-3 bg-zinc-50 rounded-lg"
-        >
-          <span className="text-sm text-zinc-600">
-            当前筛选: {activeFilter === "year" ? `Year ${selectedYear}` : `Type ${selectedType}`}
-          </span>
+        {/* Type Dropdown */}
+        <div className="relative">
+          <button
+            onClick={() => {
+              setTypeDropdownOpen(!typeDropdownOpen);
+              setYearDropdownOpen(false);
+            }}
+            className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium bg-zinc-100 hover:bg-zinc-200 rounded-lg transition-colors min-w-[140px] justify-between"
+          >
+            <span>{selectedType ? (t(`papers.types.${selectedType}`) || selectedType) : t("类型 Type") || "类型 Type"}</span>
+            <ChevronDown 
+              size={14} 
+              className={`transition-transform ${typeDropdownOpen ? "rotate-180" : ""}`}
+            />
+          </button>
+          {typeDropdownOpen && (
+            <>
+              <div 
+                className="fixed inset-0 z-40" 
+                onClick={() => setTypeDropdownOpen(false)}
+              />
+              <motion.div
+                initial={{ opacity: 0, y: -8, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -8, scale: 0.95 }}
+                className="absolute top-full left-0 mt-1 bg-white border border-zinc-200 rounded-lg shadow-lg z-50 min-w-[140px] overflow-hidden"
+              >
+                <button
+                  onClick={() => handleTypeSelect(null)}
+                  className={`w-full px-4 py-2 text-sm text-left hover:bg-zinc-50 transition-colors ${
+                    !selectedType ? "bg-black text-white hover:bg-black" : "text-zinc-700"
+                  }`}
+                >
+                  全部 All
+                </button>
+                {types.map(type => (
+                  <button
+                    key={type}
+                    onClick={() => handleTypeSelect(type)}
+                    className={`w-full px-4 py-2 text-sm text-left hover:bg-zinc-50 transition-colors ${
+                      selectedType === type ? "bg-black text-white hover:bg-black" : "text-zinc-700"
+                    }`}
+                  >
+                    {t(`papers.types.${type}`) || type}
+                  </button>
+                ))}
+              </motion.div>
+            </>
+          )}
+        </div>
+
+        {/* Clear Button */}
+        {(selectedYear || selectedType) && (
           <button
             onClick={clearFilters}
-            className="flex items-center gap-1 px-2 py-1 text-xs text-zinc-500 hover:text-black hover:bg-zinc-200 rounded transition-colors"
+            className="flex items-center gap-1 px-3 py-2.5 text-sm text-zinc-500 hover:text-black hover:bg-zinc-100 rounded-lg transition-colors"
           >
-            <X size={12} />
-            清除
+            <X size={14} />
+            清除筛选
           </button>
-        </motion.div>
-      )}
-
-      {/* Filter Options */}
-      <div className="flex flex-wrap gap-2">
-        {activeFilter === "year" ? (
-          <>
-            <button
-              onClick={() => setSelectedYear(null)}
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
-                !selectedYear
-                  ? "bg-black text-white"
-                  : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200"
-              }`}
-            >
-              全部 All
-            </button>
-            {years.map(year => (
-              <button
-                key={year}
-                onClick={() => setSelectedYear(year)}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
-                  selectedYear === year
-                    ? "bg-black text-white"
-                    : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200"
-                }`}
-              >
-                {year}
-              </button>
-            ))}
-          </>
-        ) : (
-          <>
-            <button
-              onClick={() => setSelectedType(null)}
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
-                !selectedType
-                  ? "bg-black text-white"
-                  : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200"
-              }`}
-            >
-              全部 All
-            </button>
-            {types.map(type => (
-              <button
-                key={type}
-                onClick={() => setSelectedType(type)}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap ${
-                  selectedType === type
-                    ? "bg-black text-white"
-                    : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200"
-                }`}
-              >
-                {type}
-              </button>
-            ))}
-          </>
         )}
       </div>
     </div>
