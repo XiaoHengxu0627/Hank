@@ -166,6 +166,10 @@ export function Members() {
           src={member.image}
           alt={member.name}
           loading="lazy"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 267'%3E%3Crect fill='%23f3f4f6' width='200' height='267'/%3E%3Ctext fill='%239ca3af' font-family='sans-serif' font-size='12' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3E${encodeURIComponent(member.name)}%3C/text%3E%3C/svg%3E`;
+          }}
           className="w-full h-full object-cover transition-all duration-500"
         />
         
@@ -213,7 +217,7 @@ export function Members() {
         <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12 border-b border-zinc-200 pb-3 sm:pb-4">
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold tracking-widest uppercase">{t("members.advisors")}</h2>
         </div>
-        <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 gap-x-3 sm:gap-x-6 md:gap-x-12 gap-y-8 sm:gap-y-16">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-x-3 sm:gap-x-6 lg:gap-x-12 gap-y-8 sm:gap-y-16">
           {advisors.map((advisor) => (
             <MemberCard key={advisor.id} member={advisor} large={true} />
           ))}
@@ -221,11 +225,11 @@ export function Members() {
       </section>
 
       {/* PhD Section */}
-      <section className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 mb-20 sm:mb-32">
-        <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12 border-b border-zinc-200 pb-3 sm:pb-4">
+      <section className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 mb-16 sm:mb-24">
+        <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-10 border-b border-zinc-200 pb-3 sm:pb-4">
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold tracking-widest uppercase">{t("members.phdStudents")}</h2>
         </div>
-        <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-3 sm:gap-x-4 md:gap-x-8 gap-y-8 sm:gap-y-16">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 sm:gap-x-4 md:gap-x-8 gap-y-8 sm:gap-y-12">
           {phdStudents.map((student) => (
             <MemberCard key={student.id} member={student} />
           ))}
@@ -233,11 +237,11 @@ export function Members() {
       </section>
 
       {/* Master Section */}
-      <section className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 mb-20 sm:mb-32">
-        <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12 border-b border-zinc-200 pb-3 sm:pb-4">
+      <section className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 mb-16 sm:mb-24">
+        <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-10 border-b border-zinc-200 pb-3 sm:pb-4">
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold tracking-widest uppercase">{t("members.masterStudents")}</h2>
         </div>
-        <div className="grid grid-cols-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-3 sm:gap-x-4 md:gap-x-8 gap-y-8 sm:gap-y-16">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 sm:gap-x-4 md:gap-x-8 gap-y-8 sm:gap-y-12">
           {masterStudents.map((student) => (
             <MemberCard key={student.id} member={student} />
           ))}
