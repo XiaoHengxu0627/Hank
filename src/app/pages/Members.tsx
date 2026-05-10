@@ -157,18 +157,18 @@ export function Members() {
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-150px" }}
+      viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.4, ease: "easeOut" }}
       className="group flex flex-col cursor-pointer"
     >
-      <div className={`relative overflow-hidden mb-4 sm:mb-6 ${large ? "aspect-[3/4] sm:aspect-[2/3]" : "aspect-[3/4] sm:aspect-[2/3]"}`}>
+      <div className="relative overflow-hidden mb-3 sm:mb-4 flex-shrink-0" style={{ aspectRatio: '3/4', minHeight: '160px' }}>
         <img
           src={member.image}
           alt={member.name}
           loading="lazy"
           onError={(e) => {
             const target = e.target as HTMLImageElement;
-            target.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 267'%3E%3Crect fill='%23f3f4f6' width='200' height='267'/%3E%3Ctext fill='%239ca3af' font-family='sans-serif' font-size='12' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3E${encodeURIComponent(member.name)}%3C/text%3E%3C/svg%3E`;
+            target.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 200'%3E%3Crect fill='%23f3f4f6' width='150' height='200'/%3E%3Ctext fill='%239ca3af' font-family='sans-serif' font-size='10' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3E${encodeURIComponent(member.name)}%3C/text%3E%3C/svg%3E`;
           }}
           className="w-full h-full object-cover transition-all duration-500"
         />
