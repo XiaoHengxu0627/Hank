@@ -14,7 +14,7 @@ export function Home() {
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 0.4, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute inset-0 z-0 bg-[url('/background.jpg.png')] bg-cover bg-center"
+          className="absolute inset-0 z-0 bg-[url('/background.jpg')] bg-cover bg-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-zinc-950/15 to-transparent z-10" />
 
