@@ -217,7 +217,7 @@ export function Members() {
         <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12 border-b border-zinc-200 pb-3 sm:pb-4">
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold tracking-widest uppercase">{t("members.advisors")}</h2>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-x-3 sm:gap-x-6 lg:gap-x-12 gap-y-8 sm:gap-y-16">
+        <div className="grid grid-cols-3 sm:grid-cols-4 gap-x-3 sm:gap-x-4 md:gap-x-6 gap-y-8 sm:gap-y-10">
           {advisors.map((advisor) => (
             <MemberCard key={advisor.id} member={advisor} large={true} />
           ))}
@@ -229,7 +229,7 @@ export function Members() {
         <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-10 border-b border-zinc-200 pb-3 sm:pb-4">
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold tracking-widest uppercase">{t("members.phdStudents")}</h2>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 sm:gap-x-4 md:gap-x-8 gap-y-8 sm:gap-y-12">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-x-3 sm:gap-x-4 md:gap-x-6 gap-y-8 sm:gap-y-10">
           {phdStudents.map((student) => (
             <MemberCard key={student.id} member={student} />
           ))}
@@ -241,7 +241,7 @@ export function Members() {
         <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-10 border-b border-zinc-200 pb-3 sm:pb-4">
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold tracking-widest uppercase">{t("members.masterStudents")}</h2>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 sm:gap-x-4 md:gap-x-8 gap-y-8 sm:gap-y-12">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-x-3 sm:gap-x-4 md:gap-x-6 gap-y-8 sm:gap-y-10">
           {masterStudents.map((student) => (
             <MemberCard key={student.id} member={student} />
           ))}
