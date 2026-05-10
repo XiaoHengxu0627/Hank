@@ -522,7 +522,7 @@ export function Papers() {
   };
 
   return (
-    <div className="w-full bg-white pt-24 pb-32">
+    <div className="w-full bg-white pt-12 pb-32">
       <div className="max-w-7xl mx-auto px-6 mb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

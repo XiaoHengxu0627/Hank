@@ -172,8 +172,8 @@ export function Projects() {
   };
 
   return (
-    <div className="w-full bg-white pt-24 pb-32">
-      <div className="max-w-7xl mx-auto px-6 mb-16">
+    <div className="w-full bg-white pt-12 pb-32">
+      <div className="max-w-7xl mx-auto px-6 mb-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
