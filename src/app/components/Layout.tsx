@@ -36,7 +36,7 @@ export function Layout() {
   return (
     <div className="min-h-screen bg-white text-zinc-900 font-sans flex flex-col">
       {/* Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-zinc-100">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md backdrop-blur-md-safe border-b border-zinc-100" style={{ WebkitBackdropFilter: 'blur(12px)' }}>
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 bg-black rounded-sm overflow-hidden group-hover:bg-zinc-800 transition-colors">
@@ -149,10 +149,11 @@ export function Layout() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-white pt-24 px-6 md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+            className="fixed inset-0 z-40 bg-white pt-24 px-6 md:hidden overflow-y-auto"
           >
             <div className="flex flex-col gap-6 text-xl font-medium tracking-wide">
               {navLinks.map((link) => (
@@ -184,6 +185,25 @@ export function Layout() {
                   )}
                 </div>
               ))}
+              {/* Language Toggle for Mobile */}
+              <div className="flex items-center gap-2 pt-2 border-b border-zinc-100 pb-4">
+                <button
+                  onClick={() => { setLanguage("zh"); setMobileMenuOpen(false); }}
+                  className={`text-base font-medium px-3 py-1.5 transition-colors ${
+                    language === "zh" ? "bg-black text-white" : "text-zinc-500 hover:text-black"
+                  }`}
+                >
+                  中文
+                </button>
+                <button
+                  onClick={() => { setLanguage("en"); setMobileMenuOpen(false); }}
+                  className={`text-base font-medium px-3 py-1.5 transition-colors ${
+                    language === "en" ? "bg-black text-white" : "text-zinc-500 hover:text-black"
+                  }`}
+                >
+                  EN
+                </button>
+              </div>
             </div>
           </motion.div>
         )}

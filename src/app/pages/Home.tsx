@@ -9,7 +9,7 @@ export function Home() {
   return (
     <div className="flex flex-col w-full overflow-hidden">
       {/* Hero Section */}
-      <section className="relative w-full h-[90vh] bg-zinc-950 text-white flex flex-col justify-center px-6 md:px-20 overflow-hidden">
+      <section className="relative w-full h-dynamic-90 bg-zinc-950 text-white flex flex-col justify-center px-6 md:px-20 overflow-hidden">
         <motion.div
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 0.4, scale: 1 }}
