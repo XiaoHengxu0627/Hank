@@ -103,7 +103,7 @@ const translations: Record<Language, any> = {
     papers: {
       title: "论文",
       titleEn: "PAPERS",
-      subtitle: "本实验室的研究成果持续发表于CHI、DIS、Ubicomp、IDC等国际顶级学术会议及顶级期刊。",
+      subtitle: "本实验室的研究成果持续发表于DRS、Cumulus、IEEE VR、ISMAR、北大核心等国内与国际顶级学术会议及顶级期刊。",
       yearFilter: "年份 Year",
       typeFilter: "类型 Type",
       clearFilter: "清除筛选",
