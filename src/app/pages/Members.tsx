@@ -3,15 +3,17 @@ import { Mail, Github, Linkedin, ExternalLink } from "lucide-react";
 import { useLanguage } from "../i18n/context";
 
 export function Members() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const advisors = [
     {
       id: "prof-jiang",
       name: "姜可",
       enName: "Prof. Jiang Ke",
-      role: "实验室主任 / Director",
+      role: "实验室主任",
+      roleEn: "Director",
       bio: "专注于人机交互、设计认知与人工智能交叉领域。",
+      bioEn: "Focus on human-computer interaction, design cognition and AI intersection.",
       image: "/jiang-ke.jpg",
     },
   ];
@@ -22,7 +24,9 @@ export function Members() {
       name: "何自强",
       enName: "Zhiqiang He",
       role: "2022级 博士生",
+      roleEn: "Ph.D. Student, 2022",
       research: "虚拟现实｜具身代理交互｜无障碍设计",
+      researchEn: "Virtual Reality | Embodied Agent Interaction | Accessibility Design",
       image: "/zhiqiang-he.jpg",
     },
     {
@@ -30,7 +34,9 @@ export function Members() {
       name: "赵凝",
       enName: "Ning Zhao",
       role: "2025级 博士生",
+      roleEn: "Ph.D. Student, 2025",
       research: "虚拟现实｜人机交互｜虚拟博物馆",
+      researchEn: "Virtual Reality | HCI | Virtual Museum",
       image: "/zhaoning.jpg",
     },
     {
@@ -38,7 +44,9 @@ export function Members() {
       name: "明世杰",
       enName: "Shijie Ming",
       role: "2023级 博士生",
+      roleEn: "Ph.D. Student, 2023",
       research: "虚拟体验｜人机交互",
+      researchEn: "Virtual Experience | HCI",
       image: "/mingshijie.jpg",
     },
     {
@@ -46,7 +54,9 @@ export function Members() {
       name: "颜羽鹏",
       enName: "Yupeng Yan",
       role: "2023级 博士生",
+      roleEn: "Ph.D. Student, 2023",
       research: "虚拟现实｜人机交互",
+      researchEn: "Virtual Reality | HCI",
       image: "/yanyupeng.jpg",
     },
     {
@@ -54,7 +64,9 @@ export function Members() {
       name: "张靖宇",
       enName: "Jingyu Zhang",
       role: "2021级 博士生",
+      roleEn: "Ph.D. Student, 2021",
       research: "人机交互",
+      researchEn: "Human-Computer Interaction",
       image: "/zhangjingyu.jpg",
     },
   ];
@@ -65,91 +77,112 @@ export function Members() {
       name: "孙福瑞",
       enName: "Furui Sun",
       role: "2025级 硕士生",
-      image: "/sunfurui.jpg", // Asian male student placeholder
+      roleEn: "Master Student, 2025",
+      image: "/sunfurui.jpg",
     },
     {
       id: "ms-2",
       name: "肖蘅栩",
       enName: "Hengxu Xiao",
       role: "2025级 硕士生",
-      image: "/xiaohengxu.jpg", // Female student placeholder
+      roleEn: "Master Student, 2025",
+      image: "/xiaohengxu.jpg",
     },
     {
       id: "ms-3",
       name: "王资婷",
       enName: "Ziting Wang",
       role: "2025级 硕士生",
-      image: "/wangziting.jpg", // Female student placeholder
+      roleEn: "Master Student, 2025",
+      image: "/wangziting.jpg",
     },
     {
       id: "ms-4",
       name: "王天乐",
       enName: "Tianle Wang",
       role: "2025级 硕士生",
-      image: "/wangtianle.jpg", // Female student placeholder
+      roleEn: "Master Student, 2025",
+      image: "/wangtianle.jpg",
     },
     {
       id: "ms-5",
       name: "张远",
       enName: "Yuan Zhang",
       role: "2025级 硕士生",
-      image: "/zhangyuan.jpg", // Female student placeholder
+      roleEn: "Master Student, 2025",
+      image: "/zhangyuan.jpg",
     },
     {
       id: "ms-6",
       name: "宋忠诚",
       enName: "Zhongcheng Song",
       role: "2025级 硕士生",
-      image: "/songzhongcheng.jpg", // Female student placeholder
+      roleEn: "Master Student, 2025",
+      image: "/songzhongcheng.jpg",
     },
     {
       id: "ms-7",
       name: "苑浩鹏",
-      enName: "HaoPeng Yuan",
+      enName: "Haopeng Yuan",
       role: "2024级 硕士生",
-      image: "/yuanhaopeng.jpg", // Female student placeholder
+      roleEn: "Master Student, 2024",
+      image: "/yuanhaopeng.jpg",
     },
     {
       id: "ms-8",
       name: "刘耘彤",
-      enName: "YunTong Liu",
+      enName: "Yuntong Liu",
       role: "2024级 硕士生",
-      image: "/liuyuntong.jpg", // Female student placeholder
+      roleEn: "Master Student, 2024",
+      image: "/liuyuntong.jpg",
     },
     {
       id: "ms-9",
       name: "刘俊博",
       enName: "Junbo Liu",
       role: "2024级 硕士生",
-      image: "/liujunbo.jpg", // Female student placeholder
+      roleEn: "Master Student, 2024",
+      image: "/liujunbo.jpg",
     },
     {
       id: "ms-10",
       name: "赵叶予",
       enName: "Yeyu Zhao",
       role: "2024级 硕士生",
-      image: "/zhaoyeyu.jpg", // Female student placeholder
+      roleEn: "Master Student, 2024",
+      image: "/zhaoyeyu.jpg",
     },
     {
       id: "ms-11",
       name: "黎思颖",
       enName: "Siying Li",
       role: "2024级 硕士生",
-      image: "/lisiying.jpg", // Female student placeholder
+      roleEn: "Master Student, 2024",
+      image: "/lisiying.jpg",
     },
     {
       id: "ms-12",
       name: "魏涵芮",
       enName: "Hanrui Wei",
       role: "2024级 硕士生",
-      image: "/weihanrui.jpg", // Female student placeholder
+      roleEn: "Master Student, 2024",
+      image: "/weihanrui.jpg",
     },
     {
       id: "ms-13",
       name: "王佳颖",
-      enName: "Jiaying wang",
+      enName: "Jiaying Wang",
       role: "2024级 硕士生",
-      image: "/wangjiaying.jpg", // Female student placeholder
+      roleEn: "Master Student, 2024",
+      image: "/wangjiaying.jpg",
+    },
+    {
+      id: "ms-14",
+      name: "徐玉珍",
+      enName: "Yuzhen Xu",
+      role: "2024级 硕士生",
+      roleEn: "Master Student, 2024",
+      image: "/xuyuzhen.jpg",
     },
   ];
 
@@ -186,11 +219,15 @@ export function Members() {
       
       <div className="flex flex-col gap-1.5 px-1">
         <h3 className="font-bold text-base sm:text-lg md:text-xl lg:text-2xl tracking-wide">
-          {member.name}
+          {language === 'en' ? member.enName : member.name}
         </h3>
-        <p className="text-xs sm:text-sm text-zinc-400 font-normal">{member.enName}</p>
-        <p className="text-xs sm:text-sm font-medium text-black uppercase tracking-widest mt-0.5 sm:mt-1">{member.role}</p>
-        <p className="text-xs sm:text-sm text-zinc-500 mt-0.5 sm:mt-1 leading-relaxed hidden sm:block">{member.bio || member.research}</p>
+        <p className="text-xs sm:text-sm text-zinc-400 font-normal">{language === 'en' ? member.name : member.enName}</p>
+        <p className="text-xs sm:text-sm font-medium text-black uppercase tracking-widest mt-0.5 sm:mt-1">
+          {language === 'en' ? member.roleEn ?? member.role : member.role}
+        </p>
+        <p className="text-xs sm:text-sm text-zinc-500 mt-0.5 sm:mt-1 leading-relaxed hidden sm:block">
+          {language === 'en' ? (member.researchEn ?? member.bioEn ?? member.research ?? member.bio) : (member.bio ?? member.research)}
+        </p>
       </div>
     </motion.div>
   );

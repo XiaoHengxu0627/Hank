@@ -5,11 +5,10 @@ import { useLanguage } from "../i18n/context";
 
 export function Papers() {
   const { t } = useLanguage();
-  const [activeFilter, setActiveFilter] = useState<"year" | "type">("year");
   const [selectedYear, setSelectedYear] = useState<string | null>(null);
   const [selectedType, setSelectedType] = useState<string | null>(null);
-  const [isYearDropdownOpen, setIsYearDropdownOpen] = useState(false);
-  const [isTypeDropdownOpen, setIsTypeDropdownOpen] = useState(false);
+  const [yearDropdownOpen, setYearDropdownOpen] = useState(false);
+  const [typeDropdownOpen, setTypeDropdownOpen] = useState(false);
 
   const papers = [
     {
@@ -81,6 +80,33 @@ export function Papers() {
       year: "2026",
       type: "Conference Paper",
       description: "重塑'根源'：VR化身具身交互中自我-他人认知的生理基础研究。",
+    },
+    {
+      id: "paper-39",
+      title: "From Hands-on to Embodied: A Participatory Prototyping Framework for Free-Roam VR Heritage in the Case of Yan'an",
+      authors: "Zhao Ning, Ke Jiang, Ziqiang He, Shijie Ming, Haopeng Yuan, Furui Sun",
+      venue: "Cumulus 2026",
+      year: "2026",
+      type: "Conference Paper",
+      description: "从动手实践到具身认知：以延安为例的自由漫游VR遗产参与式原型框架。",
+    },
+    {
+      id: "paper-40",
+      title: "More Than a Container: Spatial Layout as a Cognitive Lever for Memory in Virtual Reality Heritage",
+      authors: "Zhao Ning, Ke Jiang, Ziqiang He, Shijie Ming, Haopeng Yuan, Furui Sun",
+      venue: "HCII 2026",
+      year: "2026",
+      type: "Conference Paper",
+      description: "不仅仅是容器：空间布局作为虚拟现实遗产记忆的认知杠杆。",
+    },
+    {
+      id: "paper-41",
+      title: "The Memory Loom: Reweaving Curatorial Power Relations with Source Communities in Virtual Reality Cultural Heritage",
+      authors: "Zhao Ning, Ke Jiang, Ziqiang He, Shijie Ming, Haopeng Yuan, Furui Sun",
+      venue: "DRS 2026",
+      year: "2026",
+      type: "Conference Paper",
+      description: "记忆织机：在虚拟现实文化遗产中与源社区重新编织策展权力关系。",
     },
     {
       id: "paper-9",
@@ -352,9 +378,6 @@ export function Papers() {
     }).sort((a, b) => parseInt(b.year) - parseInt(a.year));
   }, [papers, selectedYear, selectedType]);
 
-  const [yearDropdownOpen, setYearDropdownOpen] = useState(false);
-  const [typeDropdownOpen, setTypeDropdownOpen] = useState(false);
-
   const clearFilters = () => {
     setSelectedYear(null);
     setSelectedType(null);
@@ -382,7 +405,7 @@ export function Papers() {
             }}
             className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium bg-zinc-100 hover:bg-zinc-200 rounded-lg transition-colors min-w-[120px] justify-between"
           >
-            <span>{selectedYear || "年份 Year"}</span>
+            <span>{selectedYear || t("papers.yearFilter")}</span>
             <ChevronDown 
               size={14} 
               className={`transition-transform ${yearDropdownOpen ? "rotate-180" : ""}`}
@@ -406,7 +429,7 @@ export function Papers() {
                     !selectedYear ? "bg-black text-white hover:bg-black" : "text-zinc-700"
                   }`}
                 >
-                  全部 All
+                  {t("papers.all")}
                 </button>
                 {years.map(year => (
                   <button
@@ -433,7 +456,7 @@ export function Papers() {
             }}
             className="flex items-center gap-2 px-4 py-2.5 text-sm font-medium bg-zinc-100 hover:bg-zinc-200 rounded-lg transition-colors min-w-[140px] justify-between"
           >
-            <span>{selectedType ? (t(`papers.types.${selectedType}`) || selectedType) : t("类型 Type") || "类型 Type"}</span>
+            <span>{selectedType ? (t(`papers.types.${selectedType}`) || selectedType) : t("papers.typeFilter")}</span>
             <ChevronDown 
               size={14} 
               className={`transition-transform ${typeDropdownOpen ? "rotate-180" : ""}`}
@@ -482,7 +505,7 @@ export function Papers() {
             className="flex items-center gap-1 px-3 py-2.5 text-sm text-zinc-500 hover:text-black hover:bg-zinc-100 rounded-lg transition-colors"
           >
             <X size={14} />
-            清除筛选
+{t("papers.clearFilter")}
           </button>
         )}
       </div>
@@ -537,9 +560,9 @@ export function Papers() {
           animate={{ opacity: 1, y: 0 }}
           className="max-w-3xl"
         >
-          <h1 className="text-3xl md:text-4xl font-black mb-4 tracking-tighter">论文 <span className="text-zinc-300">PAPERS</span></h1>
+          <h1 className="text-3xl md:text-4xl font-black mb-4 tracking-tighter">{t("papers.title")} <span className="text-zinc-300">{t("papers.titleEn")}</span></h1>
           <p className="text-base md:text-lg text-zinc-500 leading-relaxed font-light">
-            本实验室的研究成果持续发表于CHI、DIS、Ubicomp、IDC等国际顶级学术会议及顶级期刊。
+            {t("papers.subtitle")}
           </p>
         </motion.div>
       </div>
@@ -554,8 +577,8 @@ export function Papers() {
               animate={{ opacity: 1 }}
               className="text-center py-16 text-zinc-500"
             >
-              <p className="text-lg">暂无符合条件的论文</p>
-              <p className="text-sm mt-2">请尝试调整筛选条件</p>
+              <p className="text-lg">{t("papers.noResults")}</p>
+              <p className="text-sm mt-2">{t("papers.noResultsHint")}</p>
             </motion.div>
           ) : (
             <motion.div

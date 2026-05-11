@@ -48,7 +48,6 @@ const translations: Record<Language, any> = {
       sub: {
         paper: "论文",
         award: "奖项",
-        forum: "论坛",
       },
     },
     home: {
@@ -98,10 +97,19 @@ const translations: Record<Language, any> = {
       followUs: "关注我们 FOLLOW US",
       address: "北京理工大学（良乡校区）",
       address2: "设计与艺术学院",
-      copyright: "Jiang Ke Design & Innovation Lab. All rights reserved.",
+      copyright: "CUI Design Lab. All rights reserved.",
       designed: "Designed with minimalism & logic.",
     },
     papers: {
+      title: "论文",
+      titleEn: "PAPERS",
+      subtitle: "本实验室的研究成果持续发表于CHI、DIS、Ubicomp、IDC等国际顶级学术会议及顶级期刊。",
+      yearFilter: "年份 Year",
+      typeFilter: "类型 Type",
+      clearFilter: "清除筛选",
+      noResults: "暂无符合条件的论文",
+      noResultsHint: "请尝试调整筛选条件",
+      all: "全部 All",
       types: {
         "Conference Paper": "会议论文",
         "Journal Paper": "期刊论文",
@@ -109,6 +117,17 @@ const translations: Record<Language, any> = {
         "Book Chapter": "书籍章节",
         "Workshop": "工作坊",
       },
+    },
+    projects: {
+      title: "项目研究",
+      titleEn: "PROJECTS",
+      subtitle: "通过深度交叉学科研究，探索设计与科技融合的无限可能。",
+      subtitle2: "以下为实验室近期的核心研究项目。",
+    },
+    awards: {
+      title: "奖项",
+      titleEn: "AWARDS",
+      subtitle: "实验室在各类国际与国内竞赛中获得的奖项荣誉。",
     },
   },
   en: {
@@ -121,7 +140,6 @@ const translations: Record<Language, any> = {
       sub: {
         paper: "Papers",
         award: "Awards",
-        forum: "Forums",
       },
     },
     home: {
@@ -175,6 +193,15 @@ const translations: Record<Language, any> = {
       designed: "Designed with minimalism & logic.",
     },
     papers: {
+      title: "Papers",
+      titleEn: "PAPERS",
+      subtitle: "Our research findings are consistently published in top-tier international academic conferences and journals such as CHI, DIS, Ubicomp, and IDC.",
+      yearFilter: "Year",
+      typeFilter: "Type",
+      clearFilter: "Clear Filters",
+      noResults: "No papers found",
+      noResultsHint: "Please try adjusting your filter criteria",
+      all: "All",
       types: {
         "Conference Paper": "Conference Paper",
         "Journal Paper": "Journal Paper",
@@ -182,6 +209,17 @@ const translations: Record<Language, any> = {
         "Book Chapter": "Book Chapter",
         "Workshop": "Workshop",
       },
+    },
+    projects: {
+      title: "Projects",
+      titleEn: "PROJECTS",
+      subtitle: "Through interdisciplinary research, we explore the boundless possibilities of design and technology integration.",
+      subtitle2: "Below are the lab's recent core research projects.",
+    },
+    awards: {
+      title: "Awards",
+      titleEn: "AWARDS",
+      subtitle: "Awards and honors received by the lab in various international and domestic competitions.",
     },
   },
 };

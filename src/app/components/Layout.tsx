@@ -28,7 +28,6 @@ export function Layout() {
       children: [
         { name: t("nav.sub.paper"), path: "/papers" },
         { name: t("nav.sub.award"), path: "/awards" },
-        { name: t("nav.sub.forum"), path: "/forums" },
       ]
     },
     { name: t("nav.team"), path: "/team" },
