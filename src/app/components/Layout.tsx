@@ -1,6 +1,6 @@
 import { Outlet, Link, useLocation, useNavigate } from "react-router";
 import { Menu, X, Globe, Mail, MapPin, ChevronDown } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useLanguage } from "../i18n/context";
 import {
@@ -15,8 +15,16 @@ export function Layout() {
   const location = useLocation();
   const { language, setLanguage, t } = useLanguage();
 
+  useLayoutEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+  }, []);
+
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   }, [location.pathname]);
 
   const navLinks = [
@@ -62,17 +70,7 @@ export function Layout() {
                       {link.name}
                       <ChevronDown size={14} className="opacity-70" />
                       {isActive && (
-                        <motion.div
-                          layoutId="nav-indicator"
-                          className="absolute -bottom-2 left-0 right-0 h-0.5 bg-black"
-                          initial={false}
-                          transition={{ 
-                            type: "spring", 
-                            stiffness: 300, 
-                            damping: 30,
-                            duration: 0.3 
-                          }}
-                        />
+                        <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-black" />
                       )}
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="center" className="w-32 bg-white/95 backdrop-blur-md rounded-xl shadow-lg border border-zinc-100 p-2">
@@ -98,17 +96,7 @@ export function Layout() {
                 >
                   {link.name}
                   {isActive && (
-                    <motion.div
-                      layoutId="nav-indicator"
-                      className="absolute -bottom-2 left-0 right-0 h-0.5 bg-black"
-                      initial={false}
-                      transition={{ 
-                        type: "spring", 
-                        stiffness: 300, 
-                        damping: 30,
-                        duration: 0.3 
-                      }}
-                    />
+                    <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-black" />
                   )}
                 </Link>
               );
@@ -211,7 +199,7 @@ export function Layout() {
 
       {/* Main Content */}
       <main className="flex-grow pt-20">
-        <Outlet />
+        <Outlet key={location.pathname} />
       </main>
 
       {/* Footer */}

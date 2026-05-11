@@ -91,7 +91,7 @@ const translations: Record<Language, any> = {
       subtitle2: "致力于解决复杂的人机交互问题",
     },
     footer: {
-      labName: "JIANG KE LAB",
+      labName: "CUI Design LAB",
       desc: "我们致力于通过创新设计与前沿技术解决复杂的现实问题。探索人机交互、数字媒体与人工智能设计的交汇点。",
       contact: "联系方式 CONTACT",
       followUs: "关注我们 FOLLOW US",
