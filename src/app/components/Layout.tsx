@@ -1,6 +1,6 @@
-import { Outlet, Link, useLocation, useNavigate } from "react-router";
+import { Outlet, Link, useLocation, useNavigate, useNavigation } from "react-router";
 import { Menu, X, Globe, Mail, MapPin, ChevronDown } from "lucide-react";
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useLanguage } from "../i18n/context";
 import {
@@ -13,19 +13,36 @@ import {
 export function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigation = useNavigation();
   const { language, setLanguage, t } = useLanguage();
+  const topRef = useRef<HTMLDivElement>(null);
+  const prevPath = useRef(location.pathname);
 
   useLayoutEffect(() => {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
+    window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-  }, [location.pathname]);
+    if (navigation.state !== 'idle') return;
+    if (location.pathname === prevPath.current) return;
+    prevPath.current = location.pathname;
+
+    const doScroll = () => {
+      topRef.current?.scrollIntoView(true);
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
+
+    doScroll();
+    requestAnimationFrame(doScroll);
+    const id = setTimeout(doScroll, 50);
+
+    return () => clearTimeout(id);
+  }, [navigation.state, location.pathname]);
 
   const navLinks = [
     { name: t("nav.home"), path: "/" },
@@ -199,6 +216,7 @@ export function Layout() {
 
       {/* Main Content */}
       <main className="flex-grow pt-20">
+        <div ref={topRef} />
         <Outlet key={location.pathname} />
       </main>
 
