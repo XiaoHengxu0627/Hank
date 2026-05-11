@@ -240,13 +240,13 @@ export function Research() {
 
   return (
     <div className="w-full bg-white pt-12 pb-32">
-      <div className="max-w-7xl mx-auto px-6 mb-12">
+      <div className="max-w-7xl 2xl:max-w-9xl mx-auto px-6 mb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="max-w-3xl"
+          className="max-w-3xl 2xl:max-w-4xl"
         >
-          <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter">研究项目 <span className="text-zinc-300">RESEARCH</span></h1>
+          <h1 className="text-5xl md:text-7xl 2xl:text-8xl font-black mb-6 tracking-tighter">研究项目 <span className="text-zinc-300">RESEARCH</span></h1>
           <div className="w-16 h-1 bg-black mb-8" />
           <p className="text-xl text-zinc-500 leading-relaxed font-light">
             通过深度交叉学科研究，探索设计与科技融合的无限可能。
@@ -254,7 +254,7 @@ export function Research() {
         </motion.div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 mb-12">
+      <div className="max-w-7xl 2xl:max-w-9xl mx-auto px-6 mb-12">
         <div className="flex gap-1 bg-zinc-100 p-1 rounded-lg w-fit">
           <button
             onClick={() => setActiveTab("projects")}
@@ -280,7 +280,7 @@ export function Research() {
       </div>
 
       {activeTab === "projects" && (
-        <section className="max-w-7xl mx-auto px-6">
+        <section className="max-w-7xl 2xl:max-w-9xl mx-auto px-6">
           <div className="border-b border-zinc-200">
             {projects.map((project, idx) => (
               <ProjectCard key={project.id} project={project} index={idx} />
@@ -290,7 +290,7 @@ export function Research() {
       )}
 
       {activeTab === "papers" && (
-        <section className="max-w-7xl mx-auto px-6">
+        <section className="max-w-7xl 2xl:max-w-9xl mx-auto px-6">
           <div className="border-t border-zinc-200 pt-8">
             {papers.map((paper, idx) => (
               <PaperCard key={paper.id} paper={paper} index={idx} />

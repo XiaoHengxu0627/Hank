@@ -102,20 +102,20 @@ export function Awards() {
 
   return (
     <div className="w-full bg-white pt-12 pb-32 min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 mb-8">
+      <div className="max-w-7xl 2xl:max-w-9xl mx-auto px-6 mb-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="max-w-3xl"
+          className="max-w-3xl 2xl:max-w-4xl"
         >
-          <h1 className="text-3xl md:text-4xl font-black mb-4 tracking-tighter">{t("awards.title")} <span className="text-zinc-300">{t("awards.titleEn")}</span></h1>
-          <p className="text-base md:text-lg text-zinc-500 leading-relaxed font-light">
+          <h1 className="text-3xl md:text-4xl 2xl:text-5xl font-black mb-4 tracking-tighter">{t("awards.title")} <span className="text-zinc-300">{t("awards.titleEn")}</span></h1>
+          <p className="text-base md:text-lg 2xl:text-xl text-zinc-500 leading-relaxed font-light">
             {t("awards.subtitle")}
           </p>
         </motion.div>
       </div>
 
-      <section className="max-w-7xl mx-auto px-6">
+      <section className="max-w-7xl 2xl:max-w-9xl mx-auto px-6">
         <div className="border-b border-zinc-200">
           {awards.map((award, idx) => (
             <AwardCard key={award.id} award={award} index={idx} />

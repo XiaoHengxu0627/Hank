@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import { Mail, Github, Linkedin, ExternalLink } from "lucide-react";
 import { useLanguage } from "../i18n/context";
 
 export function Members() {
@@ -206,15 +205,6 @@ export function Members() {
           className="w-full h-full object-cover transition-all duration-500"
         />
         
-        {/* Social Links on Hover */}
-        <div className="absolute top-2 sm:top-4 right-2 sm:right-4 flex flex-col gap-1.5 sm:gap-2 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-          <button className="w-7 sm:w-10 h-7 sm:h-10 bg-white/90 backdrop-blur-sm flex items-center justify-center text-black hover:bg-black hover:text-white transition-colors">
-            <Mail size={12} />
-          </button>
-          <button className="w-7 sm:w-10 h-7 sm:h-10 bg-white/90 backdrop-blur-sm flex items-center justify-center text-black hover:bg-black hover:text-white transition-colors">
-            <ExternalLink size={12} />
-          </button>
-        </div>
       </div>
       
       <div className="flex flex-col gap-1.5 px-1">
@@ -235,14 +225,14 @@ export function Members() {
   return (
     <div className="w-full bg-white pt-12 pb-32">
       {/* Header */}
-      <div className="max-w-7xl mx-auto px-6 mb-8">
+      <div className="max-w-7xl 2xl:max-w-9xl mx-auto px-6 mb-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="max-w-3xl"
+          className="max-w-3xl 2xl:max-w-4xl"
         >
-          <h1 className="text-3xl md:text-4xl font-black mb-4 tracking-tighter">{t("members.title")} <span className="text-zinc-300">{t("members.titleEn")}</span></h1>
-          <p className="text-base md:text-lg text-zinc-500 leading-relaxed font-light">
+          <h1 className="text-3xl md:text-4xl 2xl:text-5xl font-black mb-4 tracking-tighter">{t("members.title")} <span className="text-zinc-300">{t("members.titleEn")}</span></h1>
+          <p className="text-base md:text-lg 2xl:text-xl text-zinc-500 leading-relaxed font-light">
             {t("members.subtitle")}<br />
             {t("members.subtitle2")}
           </p>
@@ -250,7 +240,7 @@ export function Members() {
       </div>
 
       {/* Advisors Section */}
-      <section className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 mb-20 sm:mb-32">
+      <section className="max-w-7xl 2xl:max-w-9xl mx-auto px-3 sm:px-4 md:px-6 mb-20 sm:mb-32">
         <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-12 border-b border-zinc-200 pb-3 sm:pb-4">
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold tracking-widest uppercase">{t("members.advisors")}</h2>
         </div>
@@ -262,7 +252,7 @@ export function Members() {
       </section>
 
       {/* PhD Section */}
-      <section className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 mb-16 sm:mb-24">
+      <section className="max-w-7xl 2xl:max-w-9xl mx-auto px-3 sm:px-4 md:px-6 mb-16 sm:mb-24">
         <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-10 border-b border-zinc-200 pb-3 sm:pb-4">
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold tracking-widest uppercase">{t("members.phdStudents")}</h2>
         </div>
@@ -274,7 +264,7 @@ export function Members() {
       </section>
 
       {/* Master Section */}
-      <section className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 mb-16 sm:mb-24">
+      <section className="max-w-7xl 2xl:max-w-9xl mx-auto px-3 sm:px-4 md:px-6 mb-16 sm:mb-24">
         <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-10 border-b border-zinc-200 pb-3 sm:pb-4">
           <h2 className="text-lg sm:text-xl md:text-2xl font-bold tracking-widest uppercase">{t("members.masterStudents")}</h2>
         </div>
@@ -286,7 +276,7 @@ export function Members() {
       </section>
 
       {/* Join Us Banner */}
-      <section className="max-w-7xl mx-auto px-6">
+      <section className="max-w-7xl 2xl:max-w-9xl mx-auto px-6">
         <div className="bg-zinc-50 p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-10 border border-zinc-100">
           <div>
             <h3 className="text-3xl font-bold mb-4">加入我们 Join the Lab</h3>

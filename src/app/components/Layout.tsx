@@ -62,7 +62,7 @@ export function Layout() {
     <div className="min-h-screen bg-white text-zinc-900 font-sans flex flex-col">
       {/* Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md backdrop-blur-md-safe border-b border-zinc-100" style={{ WebkitBackdropFilter: 'blur(12px)' }}>
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="max-w-7xl 2xl:max-w-9xl mx-auto px-6 h-20 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 bg-black rounded-sm overflow-hidden group-hover:bg-zinc-800 transition-colors">
               <img src="/icon.jpg" alt="Logo" className="w-full h-full object-cover" />
@@ -222,7 +222,7 @@ export function Layout() {
 
       {/* Footer */}
       <footer className="bg-zinc-50 border-t border-zinc-200 py-16 mt-20">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="max-w-7xl 2xl:max-w-9xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-8 bg-black rounded-sm overflow-hidden">
@@ -258,7 +258,7 @@ export function Layout() {
             <p className="text-sm text-zinc-600">公众号：CUI Design Studio</p>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-zinc-200 text-xs text-zinc-400 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="max-w-7xl 2xl:max-w-9xl mx-auto px-6 mt-16 pt-8 border-t border-zinc-200 text-xs text-zinc-400 flex flex-col md:flex-row justify-between items-center gap-4">
           <p>© {new Date().getFullYear()} {t("footer.copyright")}</p>
           <p>{t("footer.designed")}</p>
         </div>

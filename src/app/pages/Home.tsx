@@ -18,7 +18,7 @@ export function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-zinc-950/15 to-transparent z-10" />
 
-        <div className="relative z-20 max-w-5xl mx-auto w-full pt-[40px]">
+        <div className="relative z-20 max-w-5xl 2xl:max-w-7xl mx-auto w-full pt-[40px]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -28,7 +28,7 @@ export function Home() {
             <h2 className="text-sm tracking-[0.3em] text-zinc-400 font-medium uppercase">
               {t("home.labName")}
             </h2>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl 2xl:text-8xl font-black leading-[1.1] tracking-tight">
               {t("home.heroTitle1")}<br />
               <span className="text-zinc-500">{t("home.heroTitle2")}</span>
             </h1>
@@ -42,8 +42,8 @@ export function Home() {
       </section>
 
       {/* About the Lab Highlight */}
-      <section className="py-32 px-6 md:px-20 bg-white">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-20 items-center">
+      <section className="py-32 px-6 md:px-20 2xl:px-32 bg-white">
+        <div className="max-w-7xl 2xl:max-w-9xl mx-auto flex flex-col md:flex-row gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -73,7 +73,7 @@ export function Home() {
             className="flex-1 flex flex-col gap-8"
           >
             <div>
-              <h2 className="text-4xl font-bold mb-4 tracking-tight">{t("home.missionTitle")}<br />{t("home.missionSubtitle")}</h2>
+              <h2 className="text-4xl 2xl:text-5xl font-bold mb-4 tracking-tight">{t("home.missionTitle")}<br />{t("home.missionSubtitle")}</h2>
               <div className="w-12 h-1 bg-black mb-8" />
               <p className="text-zinc-600 leading-loose text-lg font-light mb-6">
                 {t("home.missionDesc1")}
