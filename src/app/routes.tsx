@@ -5,6 +5,8 @@ import { Members } from "./pages/Members";
 import { Projects } from "./pages/Projects";
 import { Papers } from "./pages/Papers";
 import { Awards } from "./pages/Awards";
+import { Topics } from "./pages/Topics";
+import { AcademicExchange } from "./pages/AcademicExchange";
 import { Research } from "./pages/Research";
 
 export const router = createBrowserRouter([
@@ -17,6 +19,8 @@ export const router = createBrowserRouter([
       { path: "projects", Component: Projects },
       { path: "papers", Component: Papers },
       { path: "awards", Component: Awards },
+      { path: "topics", Component: Topics },
+      { path: "academic-exchange", Component: AcademicExchange },
       { path: "research", Component: Research },
     ],
   },

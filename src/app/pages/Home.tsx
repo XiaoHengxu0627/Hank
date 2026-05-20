@@ -23,20 +23,21 @@ export function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-12"
           >
             <h2 className="text-sm tracking-[0.3em] text-zinc-400 font-medium uppercase">
               {t("home.labName")}
             </h2>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl 2xl:text-8xl font-black leading-[1.1] tracking-tight">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl 2xl:text-9xl font-black leading-[1.15] tracking-tight">
               {t("home.heroTitle1")}<br />
-              <span className="text-zinc-500">{t("home.heroTitle2")}</span>
+              <span className="text-zinc-500 text-2xl md:text-4xl lg:text-5xl block mt-6">{t("home.heroTitle2")}</span>
             </h1>
-            <p className="max-w-xl text-xs md:text-sm lg:text-base text-zinc-300 font-light mt-6 leading-relaxed">
-              {t("home.heroDesc1")}<br />
-              {t("home.heroDesc2")}<br />
-              {t("home.heroDesc3")}
-            </p>
+            <div className="flex flex-wrap justify-between gap-3 w-full max-w-5xl mt-28">
+              <span className="text-xs md:text-sm lg:text-base text-zinc-500 font-light tracking-wide">{t("home.heroDesc1")}</span>
+              <span className="text-xs md:text-sm lg:text-base text-zinc-500 font-light tracking-wide">{t("home.heroDesc2")}</span>
+              <span className="text-xs md:text-sm lg:text-base text-zinc-500 font-light tracking-wide">{t("home.heroDesc3")}</span>
+              <span className="text-xs md:text-sm lg:text-base text-zinc-500 font-light tracking-wide">{t("home.heroDesc4")}</span>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -59,6 +60,7 @@ export function Home() {
               <div className="absolute bottom-6 left-6 bg-white px-6 py-4 shadow-xl">
                 <p className="font-bold text-lg leading-tight">{t("home.professorName")} / {t("home.professorEnName")}</p>
                 <p className="text-xs text-zinc-500 uppercase tracking-widest mt-1">{t("home.director")}</p>
+                <p className="text-xs text-zinc-500 mt-1">{t("home.schoolTitle")}</p>
               </div>
             </div>
             {/* Design accents */}

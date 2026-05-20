@@ -358,6 +358,30 @@ export function Papers() {
       year: "2006",
       type: "Book",
     },
+    {
+      id: "patent-1",
+      title: "\"数控装备的产品语意及人机工学在线数据库系统V1.0\"计算机软件著作权",
+      authors: "姜可",
+      venue: "登记号2011SRBJ0729，证书号软著登字第BJ32850号",
+      year: "2011",
+      type: "Patent",
+    },
+    {
+      id: "patent-2",
+      title: "光伏逆变机柜外观专利",
+      authors: "姜可",
+      venue: "专利号ZL 2013 3 0039385.9",
+      year: "2013",
+      type: "Patent",
+    },
+    {
+      id: "patent-3",
+      title: "手臂式体温测试仪外观专利",
+      authors: "姜可",
+      venue: "专利号ZL 2010 3 0603659.9",
+      year: "2010",
+      type: "Patent",
+    },
   ];
 
   const years = useMemo(() => {
@@ -520,32 +544,22 @@ export function Papers() {
       animate={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: adjustedDelay, ease: "easeOut" }}
-      className="group border-b border-zinc-100 py-8 cursor-pointer hover:bg-zinc-50 transition-colors px-4 -mx-4"
+      className="group border-b border-zinc-100 py-6 cursor-pointer hover:bg-zinc-50 transition-colors px-4 -mx-4"
     >
-      <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
-        <div className="flex-shrink-0">
-          <span className="text-xs font-mono text-zinc-400 bg-zinc-100 px-3 py-1 rounded">
-            {paper.year}
-          </span>
+      <div className="flex items-start gap-4">
+        <div className="flex-shrink-0 w-8 text-right">
+          <span className="text-sm font-mono text-zinc-400">[{index + 1}]</span>
         </div>
-        
-        <div className="flex-1">
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-zinc-500">
-              {paper.type}
-            </span>
-            <span className="text-xs text-zinc-400">•</span>
-            <span className="text-xs text-zinc-500">{paper.venue}</span>
-          </div>
-          
-          <h3 className="text-xl font-bold mb-2 group-hover:text-zinc-600 transition-colors">
-            {paper.title}
-          </h3>
-          
-          <p className="text-sm text-zinc-500 mb-2">{paper.authors}</p>
-          {paper.description && (
-            <p className="text-sm text-zinc-400 leading-relaxed">{paper.description}</p>
-          )}
+        <div className="flex-1 min-w-0">
+          <p className="text-sm text-zinc-600 leading-relaxed break-words">
+            <span className="font-medium text-zinc-700">{paper.authors}</span>
+            <span className="text-zinc-400 mx-1">;</span>
+            <span className="font-medium">{paper.title}</span>
+            <span className="text-zinc-400 mx-1">.</span>
+            <span className="text-zinc-500 italic">{paper.venue}</span>
+            <span className="text-zinc-400 mx-1">,</span>
+            <span className="text-zinc-600">{paper.year}</span>
+          </p>
         </div>
       </div>
     </motion.div>

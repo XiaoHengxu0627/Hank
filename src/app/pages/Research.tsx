@@ -129,6 +129,7 @@ export function Research() {
       year: "2024",
       type: "Conference Paper",
       description: "探索在未来自动驾驶场景下，驾驶员与智能座舱之间的多模态交互模式。",
+      image: "/chi2024.jpg",
     },
     {
       id: "paper-2",
@@ -138,6 +139,7 @@ export function Research() {
       year: "2023",
       type: "Conference Paper",
       description: "基于大语言模型与扩散模型的智能创意工具研究。",
+      image: "/dis2023.jpg",
     },
     {
       id: "paper-3",
@@ -147,6 +149,7 @@ export function Research() {
       year: "2023",
       type: "Journal Article",
       description: "利用空间计算技术为视障人群提供文化遗产数字体验。",
+      image: "/ubicomp2023.jpg",
     },
     {
       id: "paper-4",
@@ -156,32 +159,34 @@ export function Research() {
       year: "2024",
       type: "Conference Paper",
       description: "工业设计场景下的人机交互研究。",
+      image: "/idc2024.jpg",
     },
   ];
 
   const ProjectCard = ({ project, index }: { project: any; index: number }) => (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+    <div
       className="group flex flex-col md:flex-row gap-6 md:gap-12 border-t border-zinc-200 py-12 cursor-pointer"
     >
       <div className="w-full md:w-5/12 aspect-[16/8.5] relative overflow-hidden bg-zinc-100">
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+          className={`w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 ${(project.id === "p3" || project.id === "p4") ? "blur-[6px]" : ""}`}
         />
+        {(project.id === "p3" || project.id === "p4") && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-xs font-bold uppercase tracking-widest text-zinc-500 bg-white/80 px-3 py-1 rounded">保密</span>
+          </div>
+        )}
         <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
 
       <div className="w-full md:w-7/12 flex flex-col justify-center px-6">
-        <div className="flex items-center gap-2.5 mb-3.5">
-          <span className="text-xs font-bold uppercase tracking-widest text-zinc-500 bg-zinc-100 px-2 py-0.5">
+        <div className="flex items-center gap-4 mb-5">
+          <span className="text-sm font-bold uppercase tracking-widest text-zinc-500 bg-zinc-100 px-4 py-1.5">
             {project.category}
           </span>
-          <span className="text-xs font-mono text-zinc-400">{project.date}</span>
+          <span className="text-sm font-mono text-zinc-400">{project.date}</span>
         </div>
         
         <h3 className="text-xl md:text-2xl font-bold mb-3.5 group-hover:text-zinc-600 transition-colors tracking-tight">
@@ -196,66 +201,45 @@ export function Research() {
           查看详情 View Case <ArrowUpRight size={13} />
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 
   const PaperCard = ({ paper, index }: { paper: any; index: number }) => (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group border-b border-zinc-100 py-8 cursor-pointer hover:bg-zinc-50 transition-colors px-4 -mx-4"
+    <div
+      className="group flex flex-col md:flex-row gap-6 md:gap-12 border-t border-zinc-200 py-12 cursor-pointer"
     >
-      <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
-        <div className="flex-shrink-0">
-          <span className="text-xs font-mono text-zinc-400 bg-zinc-100 px-3 py-1 rounded">
-            {paper.year}
+      <div className="w-full md:w-7/12 flex flex-col justify-center px-6">
+        <div className="flex items-center gap-4 mb-5">
+          <span className="text-sm font-bold uppercase tracking-widest text-zinc-500 bg-zinc-100 px-4 py-1.5">
+            {paper.type}
           </span>
+          <span className="text-sm font-mono text-zinc-400">{paper.year}</span>
         </div>
         
-        <div className="flex-1">
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-zinc-500">
-              {paper.type}
-            </span>
-            <span className="text-xs text-zinc-400">•</span>
-            <span className="text-xs text-zinc-500">{paper.venue}</span>
-          </div>
-          
-          <h3 className="text-xl font-bold mb-2 group-hover:text-zinc-600 transition-colors">
-            {paper.title}
-          </h3>
-          
-          <p className="text-sm text-zinc-500 mb-2">{paper.authors}</p>
-          <p className="text-sm text-zinc-400 leading-relaxed">{paper.description}</p>
-        </div>
-
-        <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
-          <ArrowUpRight size={20} className="text-zinc-400" />
-        </div>
+        <h3 className="text-xl md:text-2xl font-bold mb-3.5 group-hover:text-zinc-600 transition-colors tracking-tight">
+          {paper.title}
+        </h3>
+        
+        <p className="text-sm text-zinc-500 mb-2">{paper.authors}</p>
+        <p className="text-sm text-zinc-400">{paper.venue}</p>
       </div>
-    </motion.div>
+    </div>
   );
 
   return (
-    <div className="w-full bg-white pt-12 pb-32">
+    <div className="w-full bg-white pt-12 pb-32" style={{ minHeight: '100vh' }}>
       <div className="max-w-7xl 2xl:max-w-9xl mx-auto px-6 mb-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="max-w-3xl 2xl:max-w-4xl"
-        >
+        <div className="max-w-3xl 2xl:max-w-4xl">
           <h1 className="text-5xl md:text-7xl 2xl:text-8xl font-black mb-6 tracking-tighter">研究项目 <span className="text-zinc-300">RESEARCH</span></h1>
           <div className="w-16 h-1 bg-black mb-8" />
           <p className="text-xl text-zinc-500 leading-relaxed font-light">
             通过深度交叉学科研究，探索设计与科技融合的无限可能。
           </p>
-        </motion.div>
+        </div>
       </div>
 
       <div className="max-w-7xl 2xl:max-w-9xl mx-auto px-6 mb-12">
-        <div className="flex gap-1 bg-zinc-100 p-1 rounded-lg w-fit">
+        <div className="flex gap-1 bg-zinc-100 p-1 rounded-lg w-fit min-w-[200px]">
           <button
             onClick={() => setActiveTab("projects")}
             className={`px-6 py-3 text-sm font-semibold uppercase tracking-wider transition-all rounded-md ${
@@ -274,30 +258,25 @@ export function Research() {
                 : "text-zinc-500 hover:text-black"
             }`}
           >
-            学术成果
+            成果
           </button>
         </div>
       </div>
 
-      {activeTab === "projects" && (
-        <section className="max-w-7xl 2xl:max-w-9xl mx-auto px-6">
-          <div className="border-b border-zinc-200">
+      <div className="max-w-7xl 2xl:max-w-9xl mx-auto px-6">
+        <div className="border-t border-zinc-200">
+          <div style={{ display: activeTab === "projects" ? 'block' : 'none' }}>
             {projects.map((project, idx) => (
               <ProjectCard key={project.id} project={project} index={idx} />
             ))}
           </div>
-        </section>
-      )}
-
-      {activeTab === "papers" && (
-        <section className="max-w-7xl 2xl:max-w-9xl mx-auto px-6">
-          <div className="border-t border-zinc-200 pt-8">
+          <div style={{ display: activeTab === "papers" ? 'block' : 'none' }}>
             {papers.map((paper, idx) => (
               <PaperCard key={paper.id} paper={paper} index={idx} />
             ))}
           </div>
-        </section>
-      )}
+        </div>
+      </div>
     </div>
   );
 }

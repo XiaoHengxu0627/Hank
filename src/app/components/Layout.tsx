@@ -53,6 +53,8 @@ export function Layout() {
       children: [
         { name: t("nav.sub.paper"), path: "/papers" },
         { name: t("nav.sub.award"), path: "/awards" },
+        { name: t("nav.sub.topic"), path: "/topics" },
+        { name: t("nav.sub.academic"), path: "/academic-exchange" },
       ]
     },
     { name: t("nav.team"), path: "/team" },
@@ -69,7 +71,7 @@ export function Layout() {
             </div>
             <div>
               <h1 className="font-bold text-lg leading-none tracking-wide">CUI Design Lab</h1>
-              <p className="text-[10px] text-zinc-500 tracking-widest mt-1 uppercase">具身智能设计实验室</p>
+              <p className="text-[10px] text-zinc-500 tracking-widest mt-1 uppercase">CUI智能设计实验室</p>
             </div>
           </Link>
 

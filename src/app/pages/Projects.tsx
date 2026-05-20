@@ -166,17 +166,22 @@ export function Projects() {
           src={project.image}
           alt={project.title}
           loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${(project.id === "p3" || project.id === "p4") ? "blur-[6px]" : ""}`}
         />
+        {(project.id === "p3" || project.id === "p4") && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-xs font-bold uppercase tracking-widest text-zinc-500 bg-white/80 px-3 py-1 rounded">保密</span>
+          </div>
+        )}
         <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
 
       <div className="w-full md:w-7/12 flex flex-col justify-center px-6">
-        <div className="flex items-center gap-2.5 mb-3.5">
-          <span className="text-xs font-bold uppercase tracking-widest text-zinc-500 bg-zinc-100 px-2 py-0.5">
+        <div className="flex items-center gap-4 mb-5">
+          <span className="text-sm font-bold uppercase tracking-widest text-zinc-500 bg-zinc-100 px-4 py-1.5">
             {project.category}
           </span>
-          <span className="text-xs font-mono text-zinc-400">{project.date}</span>
+          <span className="text-sm font-mono text-zinc-400">{project.date}</span>
         </div>
         
         <h3 className="text-xl md:text-2xl font-bold mb-3.5 group-hover:text-zinc-600 transition-colors tracking-tight">

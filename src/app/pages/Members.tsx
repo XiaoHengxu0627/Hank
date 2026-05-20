@@ -11,7 +11,8 @@ export function Members() {
       enName: "Prof. Jiang Ke",
       role: "实验室主任",
       roleEn: "Director",
-      bio: "专注于人机交互、设计认知与人工智能交叉领域。",
+      schoolEn: "Professor, School of Design and Art, BIT",
+      bio: "专注于人机交互、人工智能与设计体验交叉领域。",
       bioEn: "Focus on human-computer interaction, design cognition and AI intersection.",
       image: "/jiang-ke.jpg",
     },
@@ -215,6 +216,11 @@ export function Members() {
         <p className="text-xs sm:text-sm font-medium text-black uppercase tracking-widest mt-0.5 sm:mt-1">
           {language === 'en' ? member.roleEn ?? member.role : member.role}
         </p>
+        {member.school && (
+          <p className="text-xs sm:text-sm text-zinc-500 tracking-wide">
+            {language === 'en' ? (member.schoolEn ?? member.school) : member.school}
+          </p>
+        )}
         <p className="text-xs sm:text-sm text-zinc-500 mt-0.5 sm:mt-1 leading-relaxed hidden sm:block">
           {language === 'en' ? (member.researchEn ?? member.bioEn ?? member.research ?? member.bio) : (member.bio ?? member.research)}
         </p>
@@ -279,14 +285,13 @@ export function Members() {
       <section className="max-w-7xl 2xl:max-w-9xl mx-auto px-6">
         <div className="bg-zinc-50 p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-10 border border-zinc-100">
           <div>
-            <h3 className="text-3xl font-bold mb-4">加入我们 Join the Lab</h3>
+            <h3 className="text-3xl font-bold mb-4">{t("members.joinTitle")} <span className="text-zinc-300">{t("members.joinTitleEn")}</span></h3>
             <p className="text-zinc-600 max-w-xl leading-relaxed">
-              我们常年招收具有设计、计算机、心理学等专业背景的优秀硕士、博士研究生。
-              如果你对科技与艺术的交汇点充满热情，欢迎发送简历与作品集至我们的邮箱。
+              {t("members.joinDesc")}
             </p>
           </div>
           <a href="mailto:absolutecui@163.com" className="bg-black text-white px-8 py-4 font-semibold uppercase tracking-wider text-sm hover:bg-zinc-800 transition-colors whitespace-nowrap inline-flex items-center justify-center">
-            联系我们 Contact Us
+            {t("members.contactBtn")}
           </a>
         </div>
       </section>
