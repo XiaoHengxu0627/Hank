@@ -166,7 +166,7 @@ export function Projects() {
           src={project.image}
           alt={project.title}
           loading="lazy"
-          className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${(project.id === "p3" || project.id === "p4") ? "blur-[6px]" : ""}`}
+          className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${project.id === "p3" ? "blur-[10px]" : project.id === "p4" ? "blur-[14px]" : ""}`}
         />
         {(project.id === "p3" || project.id === "p4") && (
           <div className="absolute inset-0 flex items-center justify-center">
