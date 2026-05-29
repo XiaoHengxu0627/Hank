@@ -13,7 +13,7 @@ export function Members() {
       roleEn: "Director",
       schoolEn: "Professor, School of Design and Art, BIT",
       bio: "专注于设计学研究、人工智能与设计体验交叉领域。",
-      bioEn: "Focus on human-computer interaction, design cognition and AI intersection.",
+      bioEn: "Focus on design research, design cognition and AI intersection.",
       image: "/jiang-ke.jpg",
     },
   ];
@@ -21,6 +21,16 @@ export function Members() {
   const phdStudents = [
     {
       id: "phd-1",
+      name: "张靖宇",
+      enName: "Jingyu Zhang",
+      role: "2021级 博士生",
+      roleEn: "Ph.D. Student, 2021",
+      research: "人机交互",
+      researchEn: "Human-Computer Interaction",
+      image: "/zhangjingyu.jpg",
+    },
+    {
+      id: "phd-2",
       name: "何自强",
       enName: "Zhiqiang He",
       role: "2022级 博士生",
@@ -30,27 +40,7 @@ export function Members() {
       image: "/zhiqiang-he.jpg",
     },
     {
-      id: "phd-2",
-      name: "赵凝",
-      enName: "Ning Zhao",
-      role: "2025级 博士生",
-      roleEn: "Ph.D. Student, 2025",
-      research: "虚拟现实｜人机交互｜虚拟博物馆",
-      researchEn: "Virtual Reality | HCI | Virtual Museum",
-      image: "/zhaoning.jpg",
-    },
-    {
       id: "phd-3",
-      name: "明世杰",
-      enName: "Shijie Ming",
-      role: "2023级 博士生",
-      roleEn: "Ph.D. Student, 2023",
-      research: "虚拟体验｜人机交互",
-      researchEn: "Virtual Experience | HCI",
-      image: "/mingshijie.jpg",
-    },
-    {
-      id: "phd-4",
       name: "颜羽鹏",
       enName: "Yupeng Yan",
       role: "2023级 博士生",
@@ -60,14 +50,24 @@ export function Members() {
       image: "/yanyupeng.jpg",
     },
     {
+      id: "phd-4",
+      name: "明世杰",
+      enName: "Shijie Ming",
+      role: "2024级 博士生",
+      roleEn: "Ph.D. Student, 2024",
+      research: "虚拟体验｜人机交互",
+      researchEn: "Virtual Experience | HCI",
+      image: "/mingshijie.jpg",
+    },
+    {
       id: "phd-5",
-      name: "张靖宇",
-      enName: "Jingyu Zhang",
-      role: "2021级 博士生",
-      roleEn: "Ph.D. Student, 2021",
-      research: "人机交互",
-      researchEn: "Human-Computer Interaction",
-      image: "/zhangjingyu.jpg",
+      name: "赵凝",
+      enName: "Ning Zhao",
+      role: "2025级 博士生",
+      roleEn: "Ph.D. Student, 2025",
+      research: "虚拟现实｜人机交互｜虚拟博物馆",
+      researchEn: "Virtual Reality | HCI | Virtual Museum",
+      image: "/zhaoning.jpg",
     },
   ];
 
@@ -278,6 +278,15 @@ export function Members() {
           {masterStudents.map((student) => (
             <MemberCard key={student.id} member={student} />
           ))}
+        </div>
+      </section>
+
+      <section className="max-w-7xl 2xl:max-w-9xl mx-auto px-3 sm:px-4 md:px-6 mb-16 sm:mb-24">
+        <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-10 border-b border-zinc-200 pb-3 sm:pb-4">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-bold tracking-widest uppercase">{t("members.notableAlumni")}</h2>
+        </div>
+        <div className="pt-0 pb-10 text-base sm:text-lg text-zinc-500">
+          {t("members.notableAlumniComingSoon")}
         </div>
       </section>
 
