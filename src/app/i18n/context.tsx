@@ -65,7 +65,7 @@ const translations: Record<Language, any> = {
       missionTitle: "我们的使命",
       missionSubtitle: "OUR MISSION",
       missionDesc1: "通过多学科的深度交叉，我们旨在解决由于快速技术演进而带来的新兴人本设计挑战。实验室秉承「严谨、创新、开放」的理念，为每一位热爱设计的青年学者提供成长沃土。",
-      missionDesc2: "不仅关注视觉体验的优雅，更强调交互背后强大的逻辑支撑与文化内涵。我们与顶尖科技企业和学术机构保持紧密合作，推动学术成果的产业转化。",
+      missionDesc2: "我们不仅关注用户体验的优雅，更强调人机交互背后的逻辑与文化内涵。我们深耕设计学研究，并与顶尖科技企业保持紧密合作，共同推动学术成果的产业转化。",
       crossField: "多领域交叉",
       crossFieldDesc: "涵盖工业设计、AI应用与交互技术。",
       researchOriented: "研究导向",

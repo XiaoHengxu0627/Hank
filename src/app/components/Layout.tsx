@@ -1,8 +1,9 @@
-import { Outlet, Link, useLocation, useNavigate, useNavigation } from "react-router";
-import { Menu, X, Globe, Mail, MapPin, ChevronDown } from "lucide-react";
+import { Outlet, Link, useLocation, useNavigation } from "react-router";
+import { Menu, X, Mail, MapPin, ChevronDown, Download } from "lucide-react";
 import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useLanguage } from "../i18n/context";
+import { exportToWord } from "../utils/exportDocx";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,6 +13,8 @@ import {
 
 export function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showExportButton, setShowExportButton] = useState(false);
+  const [isExporting, setIsExporting] = useState(false);
   const location = useLocation();
   const navigation = useNavigation();
   const { language, setLanguage, t } = useLanguage();
@@ -43,6 +46,17 @@ export function Layout() {
 
     return () => clearTimeout(id);
   }, [navigation.state, location.pathname]);
+
+  const handleExport = async () => {
+    setIsExporting(true);
+    try {
+      await exportToWord();
+    } catch (error) {
+      console.error("Export failed:", error);
+    } finally {
+      setIsExporting(false);
+    }
+  };
 
   const navLinks = [
     { name: t("nav.home"), path: "/" },
@@ -262,7 +276,30 @@ export function Layout() {
         </div>
         <div className="max-w-7xl 2xl:max-w-9xl mx-auto px-6 mt-16 pt-8 border-t border-zinc-200 text-xs text-zinc-400 flex flex-col md:flex-row justify-between items-center gap-4">
           <p>© {new Date().getFullYear()} {t("footer.copyright")}</p>
-          <p>{t("footer.designed")}</p>
+          
+          <AnimatePresence>
+            {showExportButton && (
+              <motion.button
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                onClick={handleExport}
+                disabled={isExporting}
+                className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-full hover:bg-zinc-800 transition-all disabled:opacity-50 shadow-lg"
+              >
+                <Download size={14} />
+                {isExporting ? (language === "en" ? "Exporting..." : "导出中...") : (language === "en" ? "Export Entries (Word)" : "导出系统条目 (Word)")}
+              </motion.button>
+            )}
+          </AnimatePresence>
+
+          <p 
+            onDoubleClick={() => setShowExportButton(!showExportButton)}
+            className="cursor-default select-none hover:text-zinc-500 transition-colors"
+            title={language === "en" ? "Double click to toggle export" : "双击切换导出按钮"}
+          >
+            {t("footer.designed")}
+          </p>
         </div>
       </footer>
     </div>
