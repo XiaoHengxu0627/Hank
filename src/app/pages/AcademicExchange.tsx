@@ -7,6 +7,17 @@ export function AcademicExchange() {
 
   const exchanges = [
     {
+      id: "exchange-0",
+      title: "我院师生在虚拟现实与无障碍交互领域发表成果",
+      titleEn: "Our Faculty and Students Published Research in VR and Accessible Interaction",
+      date: "2026",
+      dateEn: "2026",
+      keywords: "IEEE VR 2026",
+      keywordsEn: "IEEE VR 2026",
+      image: "/work4.jpg",
+      link: "https://mp.weixin.qq.com/s/9-vDNoQ82YTAGAN8wC8qsg",
+    },
+    {
       id: "exchange-1",
       title: "CUI Design Lab 三篇论文在 Cumulus 2026 国际设计学术会议上发表",
       titleEn: "Cumulus 2026 International Conference and Exhibition on Design in Virtual Interaction",
