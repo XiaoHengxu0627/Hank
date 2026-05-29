@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowUpRight, ChevronDown, X } from "lucide-react";
+import { ChevronDown, X } from "lucide-react";
 import { useState, useMemo } from "react";
 import { useLanguage } from "../i18n/context";
 
@@ -79,7 +79,7 @@ export function Papers() {
     },
     {
       id: "paper-13",
-      content: "颜羽鹏,姜可,赵祎乾,等.面向多维情感体验的指挥训练舱色彩设计研究[J].机械设计,2026,43(2):234-240.（CSCD）",
+      content: "颜羽鹏,姜可,赵祎乾,等.面向多维情感体验的指挥训练舱色彩设计研究[J].机械设计,2026,43(2):234-240.（北大核心;CSCD）",
       type: "Journal Paper",
       year: "2026",
     },
@@ -87,6 +87,12 @@ export function Papers() {
       id: "paper-14",
       content: "颜羽鹏,姜可.基于情境自适应的指挥信息系统交互设计研究[J].包装工程,2026,47(8):1-13+27.（北大核心）",
       type: "Journal Paper",
+      year: "2026",
+    },
+    {
+      id: "paper-44",
+      content: "北京理工大学.一种稳固佩戴的VR头显装置:202520746543.1[P].2026-03-20.",
+      type: "Patent",
       year: "2026",
     },
     {
@@ -103,7 +109,7 @@ export function Papers() {
     },
     {
       id: "paper-18",
-      content: "颜羽鹏,姜可,魏大彭,等.草方格铺设车操控台界面布局设计研究[J].机械设计,2025,42(12):189-196.（CSCD）",
+      content: "颜羽鹏,姜可,魏大彭,等.草方格铺设车操控台界面布局设计研究[J].机械设计,2025,42(12):189-196.（北大核心;CSCD）",
       type: "Journal Paper",
       year: "2025",
     },
@@ -126,6 +132,12 @@ export function Papers() {
       year: "2025",
     },
     {
+      id: "paper-45",
+      content: "颜羽鹏.带数字空间教学实训的图形用户界面的电子设备:202430567811.4[P].2025-09-05.",
+      type: "Patent",
+      year: "2025",
+    },
+    {
       id: "paper-22",
       content: "HE Z, JIANG K. Meta Arm: VR Control Device for Forearm Amputees[C]//HCI International '24. 2024.（设计学A会，EI检索）",
       type: "Conference Paper",
@@ -139,7 +151,7 @@ export function Papers() {
     },
     {
       id: "paper-24",
-      content: "颜羽鹏,姜可,程健鹏,等.作战筹划系统多模态人机交互技术应用进展[J].机械设计,2024,41(7):175-181.（CSCD）",
+      content: "颜羽鹏,姜可,程健鹏,等.作战筹划系统多模态人机交互技术应用进展[J].机械设计,2024,41(7):175-181.（北大核心;CSCD）",
       type: "Journal Paper",
       year: "2024",
     },
@@ -182,7 +194,7 @@ export function Papers() {
     {
       id: "paper-33",
       content: "姜可, 韩炎萃, 安晓颖. 工业设计奖项发展现状及趋势[M]//设计产业蓝皮书: 中国设计产业发展报告2019—2020. 2020.",
-      type: "Book Chapter",
+      type: "Book",
       year: "2020",
     },
     {
@@ -229,7 +241,7 @@ export function Papers() {
     },
     {
       id: "paper-41",
-      content: "JIANG K, WANG J J. Web-Based Image Scale Dynamic Partition[C]//CAIDCD '10. 2010.",
+      content: "Jiang Ke,Wang Jing-jing. Web-based Image Scale dynamic partition[C]//IEEE International Conference on Computer-Aided Industrial Design & Conceptual Design (CAIDCD 2010). 2010.",
       type: "Conference Paper",
       year: "2010",
     },
@@ -244,6 +256,72 @@ export function Papers() {
       content: "姜可. 中国工业设计年鉴[M]. 北京: 知识产权出版社, 2006.",
       type: "Book",
       year: "2006",
+    },
+    {
+      id: "paper-44",
+      content: "潘飞,姜可,王东琦.基于眼动追踪技术的购票网站可用性设计研究[J].包装工程,2020,41(24):243-247.（北大核心）",
+      type: "Journal Paper",
+      year: "2020",
+    },
+    {
+      id: "paper-45",
+      content: "姜可.机床工业设计创新中人的需求调研探讨[J].制造技术与机床,2013,(11):84-87.（北大核心）",
+      type: "Journal Paper",
+      year: "2013",
+    },
+    {
+      id: "paper-46",
+      content: "姜可.创新思维培养方法研究[C]//中国机械工程学会工业设计分会.Proceedings of the 2007 International Conference on Industrial Design(Volume 1/2).机械工业出版社,2007:148-150.（设计学重要会议）",
+      type: "Conference Paper",
+      year: "2007",
+    },
+    {
+      id: "paper-47",
+      content: "姜可,栾忠权.绿色服务设计观念和方法[C]//中国机械工程学会工业设计分会.Proceedings of the 2007 International Conference on Industrial Design(Volume 1/2).机械工业出版社,2007:594-596.（设计学重要会议）",
+      type: "Conference Paper",
+      year: "2007",
+    },
+    {
+      id: "paper-48",
+      content: "姜可.老年人无障碍产品设计[J].包装工程,2006,(6):296-297+347.（北大核心）",
+      type: "Journal Paper",
+      year: "2006",
+    },
+    {
+      id: "paper-49",
+      content: "姜可,栾忠权,李洪海.The Application of Life Cycle Assessment in Electronic Product Design[C]//中国机械工程学会工业设计分会.Proceedings of the 2006 International Conference on Industrial Design & The 11th China Industrial Design Annual Meeting(Volume 1/2).机械工业出版社,2006:152-154.（设计学重要会议）",
+      type: "Conference Paper",
+      year: "2006",
+    },
+    {
+      id: "paper-50",
+      content: "姜可.数控机床工业设计创新研究[J].机床与液压,2006,(7):100-101+104.（北大核心）",
+      type: "Journal Paper",
+      year: "2006",
+    },
+    {
+      id: "paper-51",
+      content: "姜可,杨庆东,杨海龙.加工中心自动换刀装置的虚拟设计[J].计算机辅助设计与制造,2001,(3):40-41.",
+      type: "Journal Paper",
+      year: "2001",
+    },
+    {
+      id: "paper-52",
+      content: "姜可,王东.车辆缓冲器的建模和有限元分析[J].哈尔滨理工大学学报,2001,(1):37-40.",
+      type: "Journal Paper",
+      year: "2001",
+    },
+    {
+      id: "paper-53",
+      content: "姜可,高炳学.数控机床控制单元界面设计[C]//国际机械工程学会联合会.第一届国际机械工程学术会议论文集.机械工业出版社,2000:97-98.",
+      type: "Conference Paper",
+      year: "2000",
+    },
+    {
+      id: "paper-54",
+      content: "姜可,高炳学,毕盛.加工中心造型设计[C]//国际机械工程学会联合会.第一届国际机械工程学术会议论文集.机械工业出版社,2000:98.",
+      type: "Conference Paper",
+      year: "2000",
     },
   ];
 
