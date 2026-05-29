@@ -55,8 +55,8 @@ const translations: Record<Language, any> = {
     home: {
       labName: "CUI Design Lab",
       labSubtitle: "CUI智能设计实验室",
-      heroTitle1: "破屏 · 入境 · 重构",
-      heroTitle2: "设计与科技的虚实融合",
+      heroTitle1: "破屏 · 入境 · 虚实共生",
+      heroTitle2: "设计与科技的融合",
       heroDesc1: "大空间沉浸体验",
       heroDesc2: "虚实融合技术",
       heroDesc3: "具身机器人设计",

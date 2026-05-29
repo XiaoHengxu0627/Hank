@@ -1,9 +1,9 @@
 import { Outlet, Link, useLocation, useNavigation } from "react-router";
-import { Menu, X, Mail, MapPin, ChevronDown, Download } from "lucide-react";
+import { Menu, X, Mail, MapPin, ChevronDown, Settings2 } from "lucide-react";
 import { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useLanguage } from "../i18n/context";
-import { exportToWord } from "../utils/exportDocx";
+import { ExportModal } from "./ExportModal";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,7 +14,7 @@ import {
 export function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showExportButton, setShowExportButton] = useState(false);
-  const [isExporting, setIsExporting] = useState(false);
+  const [isExportModalOpen, setIsExportModalOpen] = useState(false);
   const location = useLocation();
   const navigation = useNavigation();
   const { language, setLanguage, t } = useLanguage();
@@ -46,17 +46,6 @@ export function Layout() {
 
     return () => clearTimeout(id);
   }, [navigation.state, location.pathname]);
-
-  const handleExport = async () => {
-    setIsExporting(true);
-    try {
-      await exportToWord();
-    } catch (error) {
-      console.error("Export failed:", error);
-    } finally {
-      setIsExporting(false);
-    }
-  };
 
   const navLinks = [
     { name: t("nav.home"), path: "/" },
@@ -283,12 +272,11 @@ export function Layout() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
-                onClick={handleExport}
-                disabled={isExporting}
-                className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-full hover:bg-zinc-800 transition-all disabled:opacity-50 shadow-lg"
+                onClick={() => setIsExportModalOpen(true)}
+                className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-full hover:bg-zinc-800 transition-all shadow-lg"
               >
-                <Download size={14} />
-                {isExporting ? (language === "en" ? "Exporting..." : "导出中...") : (language === "en" ? "Export Entries (Word)" : "导出系统条目 (Word)")}
+                <Settings2 size={14} />
+                {language === "en" ? "Export Settings" : "导出配置"}
               </motion.button>
             )}
           </AnimatePresence>
@@ -302,6 +290,12 @@ export function Layout() {
           </p>
         </div>
       </footer>
+
+      <ExportModal 
+        isOpen={isExportModalOpen} 
+        onClose={() => setIsExportModalOpen(false)} 
+        language={language as "zh" | "en"} 
+      />
     </div>
   );
 }
