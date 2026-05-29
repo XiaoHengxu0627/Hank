@@ -26,6 +26,7 @@ export function Projects() {
       description: "为世界人形机器人运动会设计赛事奖牌及足球比赛奖杯。",
       descriptionEn: "Designed medals and trophy for the World Humanoid Robot Games.",
       image: "/robot-sports-design.jpg",
+      link: "https://mp.weixin.qq.com/s/0CGbwv74zZm8Ttlf3VmGLQ",
     },
     {
       id: "p3",
@@ -88,6 +89,7 @@ export function Projects() {
       description: "参与制作虚拟微电影，获评百部精品网络正能量动漫音视频作品。",
       descriptionEn: "Participated in virtual micro film production, recognized as one of the top 100 positive energy digital works.",
       image: "/road-film.jpg",
+      link:"http://mp.weixin.qq.com/s?search_click_id=5084543811429122995-1780026450072-8099497799&__biz=MzUyMzYxNjE0Mg==&mid=2247585913&idx=1&sn=1539605b6f289ec85cb2a51291d6f228&chksm=fb58e9c493da8072000daf6db4566e84083723d41f54caaa5bb5e31807fa4b0a4a65f15a425a&scene=7#rd"
     },
     {
       id: "p9",
@@ -98,6 +100,7 @@ export function Projects() {
       description: "项目上线半个月点击人数突破200万，登录体验人数超40万，成为元宇宙技术在思政教育领域的首次全国性应用，获央视《新闻联播》报道。",
       descriptionEn: "Over 2 million clicks and 400,000 visitors within two weeks, becoming the first national metaverse application in ideological education, reported by CCTV News.",
       image: "/youth-exhibition.jpg",
+      link:"https://mp.weixin.qq.com/s/O7wAe9NMqOgQeDVKt_omcQ"
     },
     {
       id: "p10",
@@ -118,6 +121,7 @@ export function Projects() {
       description: "主参与大型沉浸式元宇宙游戏开发，获2023\"The most users to an exhibition visiting virtual hangout\"吉尼斯世界纪录。",
       descriptionEn: "Led the development of large immersive metaverse game, awarded Guinness World Record for most users in a virtual exhibition hangout in 2023.",
       image: "/challenge-cup-metaverse.jpg",
+      link:"https://mp.weixin.qq.com/s/30rn8p0Bm5amN8GPlcXnXw"
     },
     {
       id: "p12",
@@ -128,6 +132,7 @@ export function Projects() {
       description: "主参与央视大型沉浸式元宇宙游戏开发，获Epic 2022唯一最佳应用奖。",
       descriptionEn: "Led development for CCTV's immersive metaverse game, awarded Epic Games' 2022 Best Application Award.",
       image: "/sanxingdui-metaverse.jpg",
+      link:"https://mp.weixin.qq.com/s/crzOJJtW57k_DOjwJAk6kQ"
     },
     {
       id: "p13",
@@ -138,6 +143,7 @@ export function Projects() {
       description: "参与冬奥会及冬残奥会开闭幕式的仿真技术支持。",
       descriptionEn: "Provided simulation technical support for Beijing 2022 Winter Olympics opening and closing ceremonies.",
       image: "/winter-olympics-sim.jpg",
+      link:"https://mp.weixin.qq.com/s/hgULO5CyJwAewJ9ejfFw_w"
     },
     {
       id: "p14",
@@ -166,9 +172,9 @@ export function Projects() {
           src={project.image}
           alt={project.title}
           loading="lazy"
-          className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${project.id === "p3" ? "blur-[10px]" : project.id === "p4" ? "blur-[14px]" : ""}`}
+          className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${project.id === "p4" ? "blur-[14px]" : ""}`}
         />
-        {(project.id === "p3" || project.id === "p4") && (
+        {project.id === "p4" && (
           <div className="absolute inset-0 flex items-center justify-center">
             <span className="text-xs font-bold uppercase tracking-widest text-zinc-500 bg-white/80 px-3 py-1 rounded">保密</span>
           </div>

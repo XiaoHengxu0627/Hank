@@ -12,7 +12,7 @@ export function Members() {
       role: "实验室主任",
       roleEn: "Director",
       schoolEn: "Professor, School of Design and Art, BIT",
-      bio: "专注于人机交互、人工智能与设计体验交叉领域。",
+      bio: "专注于设计学研究、人工智能与设计体验交叉领域。",
       bioEn: "Focus on human-computer interaction, design cognition and AI intersection.",
       image: "/jiang-ke.jpg",
     },

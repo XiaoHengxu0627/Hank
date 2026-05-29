@@ -69,6 +69,7 @@ export function Research() {
       date: "2023",
       description: "参与制作虚拟微电影，获评百部精品网络正能量动漫音视频作品。",
       image: "/road-film.jpg",
+      link:"http://mp.weixin.qq.com/s?search_click_id=5084543811429122995-1780026450072-8099497799&__biz=MzUyMzYxNjE0Mg==&mid=2247585913&idx=1&sn=1539605b6f289ec85cb2a51291d6f228&chksm=fb58e9c493da8072000daf6db4566e84083723d41f54caaa5bb5e31807fa4b0a4a65f15a425a&scene=7#rd"
     },
     {
       id: "p9",
@@ -171,9 +172,9 @@ export function Research() {
         <img
           src={project.image}
           alt={project.title}
-          className={`w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 ${(project.id === "p3" || project.id === "p4") ? "blur-[6px]" : ""}`}
+          className={`w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 ${project.id === "p4" ? "blur-[6px]" : ""}`}
         />
-        {(project.id === "p3" || project.id === "p4") && (
+        {project.id === "p4" && (
           <div className="absolute inset-0 flex items-center justify-center">
             <span className="text-xs font-bold uppercase tracking-widest text-zinc-500 bg-white/80 px-3 py-1 rounded">保密</span>
           </div>
