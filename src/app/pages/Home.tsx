@@ -112,25 +112,9 @@ export function Home() {
           transition={{ duration: 20, ease: "linear", repeat: Infinity }}
           className="flex gap-16 text-zinc-700 text-6xl font-black uppercase tracking-tighter"
         >
-          <span>INTERACTION DESIGN</span>
+          <span>CUI Design Lab 三篇论文在 Cumulus 2026 国际设计学术会议上发表</span>
           <span>•</span>
-          <span>ARTIFICIAL INTELLIGENCE</span>
-          <span>•</span>
-          <span>HUMAN-COMPUTER INTERACTION</span>
-          <span>•</span>
-          <span>USER EXPERIENCE</span>
-          <span>•</span>
-          <span>DIGITAL MEDIA</span>
-          <span>•</span>
-          <span>INTERACTION DESIGN</span>
-          <span>•</span>
-          <span>ARTIFICIAL INTELLIGENCE</span>
-          <span>•</span>
-          <span>HUMAN-COMPUTER INTERACTION</span>
-          <span>•</span>
-          <span>USER EXPERIENCE</span>
-          <span>•</span>
-          <span>DIGITAL MEDIA</span>
+          <span>CUI Design Lab 三篇论文在 Cumulus 2026 国际设计学术会议上发表</span>
           <span>•</span>
         </motion.div>
       </section>
