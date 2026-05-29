@@ -67,13 +67,13 @@ const translations: Record<Language, any> = {
       missionDesc1: "通过多学科的深度交叉，我们旨在解决由于快速技术演进而带来的新兴人本设计挑战。实验室秉承「严谨、创新、开放」的理念，为每一位热爱设计的青年学者提供成长沃土。",
       missionDesc2: "我们不仅关注用户体验的优雅，更强调人机交互背后的逻辑与文化内涵。我们深耕设计学研究，并与顶尖科技企业保持紧密合作，共同推动学术成果的产业转化。",
       crossField: "多领域交叉",
-      crossFieldDesc: "涵盖工业设计、AI应用与交互技术。",
+      crossFieldDesc: "设计、艺术与工程交叉融合。",
       researchOriented: "研究导向",
-      researchOrientedDesc: "注重理论模型构建与实证评估。",
+      researchOrientedDesc: "为了”设计“做研究、以及关于”设计“的研究。",
       professorName: "姜可 教授",
       professorEnName: "Prof. Jiang Ke",
       director: "实验室主任 Director",
-      schoolTitle: "北京理工大学设计与艺术学院教授",
+      schoolTitle: "北京理工大学设计与艺术学院教授、博士生导师",
       schoolTitleEn: "Professor, School of Design and Art, BIT",
     },
     members: {
@@ -99,7 +99,7 @@ const translations: Record<Language, any> = {
     },
     footer: {
       labName: "CUI Design Lab",
-      desc: "我们致力于通过创新设计与前沿技术解决复杂的现实问题。探索人机交互、数字媒体与人工智能设计的交汇点。",
+      desc: "致力于应用设计与前沿技术解决复杂的现实问题，探索人的需求、设计、技术与市场的交汇点。",
       contact: "联系方式 CONTACT",
       followUs: "关注我们 FOLLOW US",
       address: "北京理工大学（良乡校区）",
@@ -132,7 +132,7 @@ const translations: Record<Language, any> = {
     },
     academicExchange: {
       title: "学术交流",
-      titleEn: "ACADEMIC EXCHANGE",
+      titleEn: "ACADEMIC COMMUNICATION",
       subtitle: "实验室参与的国内外学术交流活动。",
     },
     projects: {
@@ -158,7 +158,7 @@ const translations: Record<Language, any> = {
         paper: "Papers",
         award: "Awards",
         topic: "Topics",
-        academic: "Academic Exchange",
+        academic: "Academic Communication",
       },
     },
     home: {
@@ -176,9 +176,9 @@ const translations: Record<Language, any> = {
       missionDesc1: "Through deep interdisciplinary collaboration, we aim to address emerging human-centered design challenges brought by rapid technological evolution. The lab upholds the principles of rigor, innovation, and openness, providing fertile ground for young scholars passionate about design.",
       missionDesc2: "We focus not only on the elegance of visual experience but also emphasize the strong logical support and cultural connotations behind interactions. We maintain close cooperation with top technology enterprises and academic institutions to promote the industrial transformation of academic achievements.",
       crossField: "Multi-disciplinary",
-      crossFieldDesc: "Covering industrial design, AI applications, and interaction technology.",
+      crossFieldDesc: "Design, art, and engineering intersect in our cross-disciplinary research.",
       researchOriented: "Research-Oriented",
-      researchOrientedDesc: "Emphasizing theoretical model construction and empirical evaluation.",
+      researchOrientedDesc: "For design research, we focus on the design process.",
       professorName: "Prof. Jiang Ke",
       professorEnName: "姜可 教授",
       director: "Director",
@@ -239,9 +239,9 @@ const translations: Record<Language, any> = {
       subtitle: "Major research projects undertaken by the lab.",
     },
     academicExchange: {
-      title: "Academic Exchange",
-      titleEn: "ACADEMIC EXCHANGE",
-      subtitle: "Academic exchange activities participated by the lab.",
+      title: "Academic Communication",
+      titleEn: "ACADEMIC COMMUNICATION",
+      subtitle: "Academic communication activities participated by the lab.",
     },
     projects: {
       title: "Projects",

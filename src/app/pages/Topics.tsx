@@ -3,7 +3,7 @@ import { useLanguage } from "../i18n/context";
 import { teacherTopics } from "../data/topics";
 
 export function Topics() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <div className="w-full bg-white pt-12 pb-32">
@@ -36,7 +36,7 @@ export function Topics() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm text-zinc-600 leading-relaxed break-words">
-                    {topic.content}
+                    {language === "en" ? (topic.contentEn || topic.content) : topic.content}
                   </p>
                 </div>
               </div>

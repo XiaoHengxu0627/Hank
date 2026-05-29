@@ -118,7 +118,7 @@ const exportWord = async (data: any, isEn: boolean) => {
   if (data.topics.length > 0) {
     children.push(new Paragraph({ text: isEn ? "IV. Topics" : "四、课题 (Topics)", heading: HeadingLevel.HEADING_2, spacing: { before: 400, after: 200 } }));
     data.topics.forEach((t: any) => {
-      children.push(new Paragraph({ text: t.content, spacing: { before: 120, after: 120 } }));
+      children.push(new Paragraph({ text: isEn ? (t.contentEn || t.content) : t.content, spacing: { before: 120, after: 120 } }));
     });
   }
 
@@ -170,7 +170,7 @@ const exportExcel = (data: any, isEn: boolean) => {
 
   if (data.topics.length > 0) {
     const ws = XLSX.utils.json_to_sheet(data.topics.map((t: any) => ({
-      [isEn ? "Content" : "内容"]: t.content
+      [isEn ? "Content" : "内容"]: isEn ? (t.contentEn || t.content) : t.content
     })));
     XLSX.utils.book_append_sheet(wb, ws, isEn ? "Topics" : "课题");
   }
