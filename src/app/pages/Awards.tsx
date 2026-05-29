@@ -51,45 +51,40 @@ export function Awards() {
 
   // 奖项条目组件
   const AwardCard = ({ award, index }: { award: any; index: number }) => (
-    <motion.div
+    <motion.a
+      href={award.workLink || award.titleLink || "#"}
+      target="_blank"
+      rel="noopener noreferrer"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group flex flex-col md:flex-row gap-6 md:gap-12 border-t border-zinc-200 py-12 cursor-pointer"
+      className="group flex flex-col md:flex-row gap-6 md:gap-12 border-t border-zinc-200 py-12 cursor-pointer block"
     >
       {/* 主图部分 */}
       <div className="w-full md:w-4/12 aspect-[16/8.5] relative overflow-hidden bg-zinc-100">
-        <a href={award.imageLink} className="block w-full h-full">
-          <img
-            src={award.image}
-            alt={award.workTitle}
-            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-          />
-        </a>
+        <img
+          src={award.image}
+          alt={award.workTitle}
+          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+        />
       </div>
 
       {/* 文字内容部分 */}
       <div className="w-full md:w-8/12 flex flex-col justify-center px-6">
         {/* 作品名称 - 最大字号 */}
-        <h2 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-zinc-600 transition-colors tracking-tight">
-          <a href={award.workLink} className="text-zinc-900 hover:text-zinc-600 transition-colors">
-            {language === 'en' ? (award.workTitleEn || award.workTitle) : award.workTitle}
-          </a>
+        <h2 className="text-xl md:text-2xl font-bold mb-2 group-hover:text-zinc-600 transition-colors tracking-tight text-zinc-900">
+          {language === 'en' ? (award.workTitleEn || award.workTitle) : award.workTitle}
         </h2>
 
         {/* 奖项名称 - 次一级字号 */}
         <h3 className="text-base md:text-lg font-semibold mb-3 text-zinc-700">
-          <a href={award.titleLink} className="text-zinc-700 hover:text-zinc-900 transition-colors">
-            {language === 'en' ? award.titleEn : award.title}
-          </a>
+          {language === 'en' ? award.titleEn : award.title}
         </h3>
 
         {/* 作者名称 */}
         <p className="text-sm text-zinc-500 mb-5 font-light">
-          <a href={award.authorsLink} className="text-zinc-500 hover:text-zinc-900 transition-colors">
-            {language === 'en' ? award.authorsEn : award.authors}
-          </a>
+          {language === 'en' ? award.authorsEn : award.authors}
         </p>
 
         {/* 链接指示器 */}
@@ -97,7 +92,7 @@ export function Awards() {
           {language === 'en' ? 'View Details' : '查看详情'} <ArrowUpRight size={13} />
         </div>
       </div>
-    </motion.div>
+    </motion.a>
   );
 
   return (

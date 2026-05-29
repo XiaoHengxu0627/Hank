@@ -159,13 +159,20 @@ export function Projects() {
 
   const ProjectCard = ({ project, index }: { project: any; index: number }) => {
     const adjustedDelay = Math.min(index * 0.06, 0.4);
+    const CardWrapper = project.link ? motion.a : motion.div;
+    
     return (
-    <motion.div
+    <CardWrapper
+      {...(project.link ? {
+        href: project.link,
+        target: "_blank",
+        rel: "noopener noreferrer"
+      } : {})}
       initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-150px" }}
       transition={{ duration: 0.5, delay: adjustedDelay, ease: "easeOut" }}
-      className="group flex flex-col md:flex-row gap-6 md:gap-12 border-t border-zinc-200 py-12 cursor-pointer"
+      className="group flex flex-col md:flex-row gap-6 md:gap-12 border-t border-zinc-200 py-12 cursor-pointer block"
     >
       <div className="w-full md:w-5/12 aspect-[16/8.5] relative overflow-hidden bg-zinc-100">
         <img
@@ -190,7 +197,7 @@ export function Projects() {
           <span className="text-sm font-mono text-zinc-400">{project.date}</span>
         </div>
         
-        <h3 className="text-xl md:text-2xl font-bold mb-3.5 group-hover:text-zinc-600 transition-colors tracking-tight">
+        <h3 className="text-xl md:text-2xl font-bold mb-3.5 group-hover:text-zinc-600 transition-colors tracking-tight text-zinc-900">
           {language === 'en' ? project.titleEn : project.title}
         </h3>
         
@@ -198,18 +205,11 @@ export function Projects() {
           {language === 'en' ? project.descriptionEn : project.description}
         </p>
 
-        {project.link && (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest opacity-0 -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 text-zinc-700 hover:text-zinc-900"
-          >
-            {language === 'en' ? 'View Details' : '查看详情'} <ArrowUpRight size={13} />
-          </a>
-        )}
+        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest opacity-0 -translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+          {language === 'en' ? "View Details" : "查看详情"} <ArrowUpRight size={13} />
+        </div>
       </div>
-    </motion.div>
+    </CardWrapper>
     );
   };
 

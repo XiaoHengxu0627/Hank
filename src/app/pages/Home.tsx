@@ -49,23 +49,31 @@ export function Home() {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex-1 w-full relative"
+            className="flex-1 w-full"
           >
-            <div className="aspect-[4/3] bg-zinc-100 overflow-hidden relative">
-              <img
-                src="/jiang-ke.jpg"
-                alt="Professor Jiang Ke"
-                className="w-full h-full object-cover mix-blend-multiply transition-all duration-700 cursor-pointer"
-              />
-              <div className="absolute bottom-6 left-6 bg-white px-6 py-4 shadow-xl">
-                <p className="font-bold text-lg leading-tight">{t("home.professorName")} / {t("home.professorEnName")}</p>
-                <p className="text-xs text-zinc-500 uppercase tracking-widest mt-1">{t("home.director")}</p>
-                <p className="text-xs text-zinc-500 mt-1">{t("home.schoolTitle")}</p>
+            <div className="relative">
+              <div className="aspect-[4/3] bg-zinc-100 overflow-hidden relative">
+                <img
+                  src="/jiang-ke.jpg"
+                  alt="Professor Jiang Ke"
+                  className="w-full h-full object-cover mix-blend-multiply transition-all duration-700 cursor-pointer"
+                />
+                {/* Top-right design accent - Keep inside relative container to overlap slightly if needed */}
+                <div className="absolute -top-4 -right-4 w-24 h-24 border-t-2 border-r-2 border-zinc-300 z-0 pointer-events-none" />
+              </div>
+              
+              {/* Unified Info Box - Below the image, left-aligned */}
+              <div className="mt-8 md:mt-10">
+                <div className="border-l-4 border-black pl-6 py-2">
+                  <div className="flex flex-col md:flex-row md:items-baseline md:gap-4">
+                    <p className="font-bold text-xl md:text-2xl leading-tight">{t("home.professorName")}</p>
+                    <p className="text-sm md:text-base text-zinc-400 font-medium uppercase tracking-wider mt-1 md:mt-0">{t("home.professorEnName")}</p>
+                  </div>
+                  <p className="text-xs md:text-sm text-zinc-500 uppercase tracking-widest mt-4 md:mt-5 font-bold">{t("home.director")}</p>
+                  <p className="text-xs md:text-sm text-zinc-500 mt-1 font-light">{t("home.schoolTitle")}</p>
+                </div>
               </div>
             </div>
-            {/* Design accents */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 border-t-2 border-r-2 border-zinc-300 z-10" />
-            <div className="absolute -bottom-4 -left-4 w-24 h-24 border-b-2 border-l-2 border-zinc-300 z-10" />
           </motion.div>
 
           <motion.div

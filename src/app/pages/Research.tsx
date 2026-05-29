@@ -164,9 +164,16 @@ export function Research() {
     },
   ];
 
-  const ProjectCard = ({ project, index }: { project: any; index: number }) => (
-    <div
-      className="group flex flex-col md:flex-row gap-6 md:gap-12 border-t border-zinc-200 py-12 cursor-pointer"
+  const ProjectCard = ({ project, index }: { project: any; index: number }) => {
+    const CardWrapper = project.link ? "a" : "div";
+    return (
+    <CardWrapper
+      {...(project.link ? {
+        href: project.link,
+        target: "_blank",
+        rel: "noopener noreferrer"
+      } : {})}
+      className="group flex flex-col md:flex-row gap-6 md:gap-12 border-t border-zinc-200 py-12 cursor-pointer block"
     >
       <div className="w-full md:w-5/12 aspect-[16/8.5] relative overflow-hidden bg-zinc-100">
         <img
@@ -190,7 +197,7 @@ export function Research() {
           <span className="text-sm font-mono text-zinc-400">{project.date}</span>
         </div>
         
-        <h3 className="text-xl md:text-2xl font-bold mb-3.5 group-hover:text-zinc-600 transition-colors tracking-tight">
+        <h3 className="text-xl md:text-2xl font-bold mb-3.5 group-hover:text-zinc-600 transition-colors tracking-tight text-zinc-900">
           {project.title}
         </h3>
         
@@ -202,8 +209,9 @@ export function Research() {
           查看详情 View Case <ArrowUpRight size={13} />
         </div>
       </div>
-    </div>
-  );
+    </CardWrapper>
+    );
+  };
 
   const PaperCard = ({ paper, index }: { paper: any; index: number }) => (
     <div
