@@ -13,7 +13,7 @@ export function Papers() {
   const papers = [
     {
       id: "paper-1",
-      content: "HE Z Q, MING S J, ZHANG H, et al. Guiding Auditory AR: A VR-Based Evaluation of Visual and Tactile Cues for Sound Localization for Cochlear Implant Users[J]. IEEE Transactions on Visualization and Computer Graphics, 2026.（中科院top期刊，CCF-A,JCR Q1）",
+      content: "Zi-Qiang He, Shi-Jie Ming, Hao Zhang,et al. Guiding Auditory AR: A VR-Based Evaluation of Visual and Tactile Cues for Sound Localization for Cochlear Implant Users[J]. IEEE transactions on visualization and computer graphics,2026,Vol.32(5): 4678-4687.（中科院top期刊，CCF-A,JCR Q1）",
       type: "Journal Paper",
       year: "2026",
     },
@@ -169,7 +169,7 @@ export function Papers() {
     },
     {
       id: "paper-31",
-      content: "[1]林倩倩,何自强,王丹.“光”文字衍生落地灯[J].包装工程,2022,43(18):2.（北大核心）",
+      content: "林倩倩,何自强,王丹.“光”文字衍生落地灯[J].包装工程,2022,43(18):2.（北大核心）",
       type: "Journal Paper",
       year: "2022",
     },
@@ -217,7 +217,7 @@ export function Papers() {
     },
     {
       id: "paper-39",
-      content: "JIANG K, WANG J J. Research on the Mathematical Description of Style Image of Machining Centers[J]. Advanced Materials Research, 2011.",
+      content: "Jiang Ke,Wang Jingjing. Research on the mathematical description of style image of machining centers[C]//The 2011 International Conference on Key Engineering Materials and Computer Science(KEMCS 2011). 2011-08-06.",
       type: "Conference Paper",
       year: "2011",
     },
