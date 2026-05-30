@@ -5,7 +5,7 @@ export const awards = [
     title: "红点设计概念奖",
     titleEn: "Red Dot Award: Design Concept",
     authors: "何自强",
-    authorsEn: "Zhiqiang He",
+    authorsEn: "Ziqiang He",
     image: "/heziqiang.reddot.jpg",
     workLink: "#",
     titleLink: "#",
