@@ -32,7 +32,7 @@ export function Members() {
     {
       id: "phd-2",
       name: "何自强",
-      enName: "Zhiqiang He",
+      enName: "Ziqiang He",
       role: "2022级 博士生",
       roleEn: "Ph.D. Student, 2022",
       research: "虚拟现实｜具身代理交互｜无障碍设计",

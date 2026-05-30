@@ -155,7 +155,7 @@ export function Research() {
     {
       id: "paper-4",
       title: "Human-Robot Interaction in Industrial Design Context",
-      authors: "He Zhiqiang, Jiang Ke",
+      authors: "He Ziqiang, Jiang Ke",
       venue: "IDC 2024",
       year: "2024",
       type: "Conference Paper",
